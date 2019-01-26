@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Fuse from './components/Fuse';
 
 import {
   BrowserRouter as Router,
@@ -9,8 +10,7 @@ import {
 } from 'react-router-dom';
 
 import './App.scss';
-import Albums from './components/Albums';
-import AlbumDetails from './components/AlbumDetails';
+
 
 class App extends Component {
   render() {
@@ -20,18 +20,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>FUSE.</h1>
-          <nav>
-            <Link to="/albums">Albums</Link>
-          </nav>
-        </header>
 
-
-        <Route path="/albums" component={Albums}/>
-
-        <Route path="/album/" component={AlbumDetails}/>
-
+        <Route path="/" component={Fuse}/>
+  
 
       </div>
     );
