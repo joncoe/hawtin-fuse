@@ -12,4 +12,18 @@ body {
 
 a {
   color: $white;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+
+h1 {
+  font-family: 'TypefaceFourOneOT', times, sans-serif;
+  font-size: 8rem;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
 }
