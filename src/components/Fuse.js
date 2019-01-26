@@ -5,11 +5,11 @@ import AlbumDetails from './AlbumDetails';
 
 
 import {
-  BrowserRouter as Router,
-  Redirect,
+  // BrowserRouter as Router,
+  // Redirect,
   Route,
   Link,
-  Switch
+  // Switch
 } from 'react-router-dom';
 
 class Fuse extends Component {
@@ -19,7 +19,7 @@ class Fuse extends Component {
         <header className="App-header">
           
           <nav>
-            <h1><Link to="/albums">FUSE</Link></h1>
+            <h1><Link to="/albums">f.u.s.e. dimensions</Link></h1>
           </nav>
         </header>
 

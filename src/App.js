@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Fuse from './components/Fuse';
 
 import {
-  BrowserRouter as Router,
-  Redirect,
+  // BrowserRouter as Router,
+  // Redirect,
   Route,
-  Link,
-  Switch
+  // Link,
+  // Switch
 } from 'react-router-dom';
 
 import './App.scss';
