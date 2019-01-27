@@ -15,15 +15,12 @@ import './App.scss';
 class App extends Component {
   render() {
 
-    // let requestedPath = this.props.location.pathname;
-    // console.log('requested path is ', requestedPath);
 
     return (
       <div className="App">
 
         <Route path="/" component={Fuse}/>
   
-
       </div>
     );
   }
