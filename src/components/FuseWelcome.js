@@ -7,6 +7,9 @@ import {
 } from 'react-router-dom';
 
 class FuseWelcome extends Component {
+
+  
+
   render() {
     return (
       <div>
