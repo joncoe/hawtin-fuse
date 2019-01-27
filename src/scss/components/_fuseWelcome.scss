@@ -1,0 +1,20 @@
+.fuse-quote-rotation {
+  max-width: 480px;
+  margin: 0 auto;
+  ul {
+    position: relative;
+    li {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      p {
+        font-size: 0.75rem;
+        text-align: center;
+      }
+      q {
+        font-size: 0.875rem;
+        display: block;
+      }
+    }
+  }
+}
