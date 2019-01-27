@@ -23,4 +23,11 @@
   .active {
     transform: scale(0.75);
   }
+  a {
+    display: inline-block;
+    transform-origin: 50% 0;
+    transition-duration: 1s;
+    transition-property: transform;
+    transition-timing-function: $out-expo;
+  }
 }

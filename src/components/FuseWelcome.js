@@ -11,10 +11,7 @@ class FuseWelcome extends Component {
   constructor(props){
     super(props);
 
-    // this.state = 
-
     this.parentElement = null;
-
     this.myTween = null;
     this.quotesArr = [];
 
@@ -71,7 +68,8 @@ class FuseWelcome extends Component {
         }})
       }})
     }
-    cycle();
+    TweenMax.delayedCall(1, cycle);
+    // cycle();
 
   }
 
@@ -87,12 +85,7 @@ class FuseWelcome extends Component {
 
     return (
       <div ref={div => this.parentElement = div}>
-        <header className="App-header">
-          <nav>
-            <h1><NavLink to="/albums" activeClass="active">f.u.s.e.<br/>dimensions</NavLink></h1>
-          </nav>
-        </header>
-
+        
         <section className="fuse-quote-rotation">
           <ul className="list-unstyled">
             
