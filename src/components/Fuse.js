@@ -12,10 +12,24 @@ import {
 import NotFound404 from './NotFound404';
 import FuseTitle from './FuseTitle';
 
+import albumData from './data/albumdata';
+
 class Fuse extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = albumData;
+  }
+
   render() {
+
+    let selectedAlbum = this.state.albums[0];
+
+    console.log(selectedAlbum);
+
     return (
       <div>
+
 
         <Route exact path="/" component={FuseTitle} />
         <Route path="/albums" component={FuseTitle} />
@@ -30,7 +44,7 @@ class Fuse extends Component {
             exact
             path="/album/:albumName"
             render={(params) => {
-              return <AlbumDetails {...params} />
+              return <AlbumDetails {...params} selectedAlbumInfo={selectedAlbum}/>
             }}
 
           />

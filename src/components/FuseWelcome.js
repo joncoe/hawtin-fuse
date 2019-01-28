@@ -40,7 +40,6 @@ class FuseWelcome extends Component {
       }})
     }
     TweenMax.delayedCall(1, cycle);
-    // cycle();
 
   }
 

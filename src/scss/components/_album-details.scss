@@ -1,0 +1,46 @@
+.album-details-page {
+  background-color: $white;
+  width: 100vw;
+  min-height: 100vh;
+  color: $black;
+  padding: 1rem 0 4rem;
+  text-align: center;
+  overflow-x: hidden;
+
+  h1,
+  h2 {
+    color: $black;
+  }
+}
+
+.fuse-artwork {
+  max-width: 620px;
+  margin: 3rem auto;
+  padding: 0 20px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.fuse-tracklist {
+  font-family: $font-fuse;
+  font-size: 6rem;
+  line-height: 0.8em;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  &-meta {
+    font-size: 3.5rem;
+  }
+
+  margin: 3rem 0;
+  // transform: scaleX(1.2);
+}
+
+.fuse-album-info {
+  white-space: pre-line;
+  text-align: justify;
+  max-width: 620px;
+  padding: 0 20;
+  margin: 0 auto;
+}

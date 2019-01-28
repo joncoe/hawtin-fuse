@@ -20,15 +20,13 @@ a {
 }
 
 
-h1 {
-  font-family: 'TypefaceFourOneOT', times, sans-serif;
+h1,
+h2 {
+  font-family: $font-fuse;
   font-size: 8rem;
   font-weight: normal;
   font-style: normal;
   text-align: center;
   line-height: 0.8em;
-}
-
-#root {
-  padding: 1rem;
+  // transform: scaleX(2);
 }
