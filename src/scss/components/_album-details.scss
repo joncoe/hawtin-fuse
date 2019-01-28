@@ -6,6 +6,7 @@
   padding: 1rem 0 4rem;
   text-align: center;
   overflow-x: hidden;
+  position: relative;
 
   h1,
   h2 {
@@ -17,6 +18,7 @@
   max-width: 620px;
   margin: 3rem auto;
   padding: 0 20px;
+  // clip-path: inset(40%);
 
   img {
     width: 100%;
@@ -43,4 +45,17 @@
   max-width: 620px;
   padding: 0 20;
   margin: 0 auto;
+}
+
+.go-back {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+}
+
+.fuse-button-container {
+  max-width: 420px;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: space-around;
 }

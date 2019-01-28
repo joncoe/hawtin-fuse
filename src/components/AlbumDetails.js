@@ -1,4 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
+
+import ShoppingCartButton from './ShoppingCartButton';
+
+library.add(faArrowAltCircleLeft);
 
 class AlbumDetails extends Component {
 
@@ -28,7 +37,12 @@ class AlbumDetails extends Component {
     const albumInfo = currentAlbum.albumInfo;
 
     return (
-      <div class="album-details-page">
+      <div className="album-details-page">
+
+        <nav className="go-back">
+          <Link to="/albums"><img src="/images/back.svg" alt="Go back to albums page"/></Link>
+        </nav>
+
         <h1>f.u.s.e.</h1>
 
         <div className="fuse-artwork">
@@ -50,6 +64,13 @@ class AlbumDetails extends Component {
         <div className="fuse-album-info">
           {albumInfo}
         </div>
+
+        <div className="fuse-button-container">
+          <ShoppingCartButton urlText="Vinyl" url="http://www.m-nus.com" />
+          <ShoppingCartButton urlText="Digital" url="http://www.m-nus.com" />
+        </div>
+
+
       </div>
     );
   }

@@ -43,8 +43,8 @@ class Fuse extends Component {
           <Route 
             exact
             path="/album/:albumName"
-            render={(params) => {
-              return <AlbumDetails {...params} selectedAlbumInfo={selectedAlbum}/>
+            render={(props) => {
+              return <AlbumDetails {...props} selectedAlbumInfo={selectedAlbum}/>
             }}
 
           />
