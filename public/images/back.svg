@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="69px" height="18px" viewBox="0 0 69 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>back</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Album-Details---Desktop-(White)" transform="translate(-9.000000, -9.000000)" fill-rule="nonzero">
+            <g id="back" transform="translate(9.000000, 9.000000)">
+                <g id="arrow-circle-left-solid" fill="#000000">
+                    <path d="M9,18 C4.02822581,18 0,13.9717742 0,9 C0,4.02822581 4.02822581,0 9,0 C13.9717742,0 18,4.02822581 18,9 C18,13.9717742 13.9717742,18 9,18 Z M10.0487903,12.7887097 L7.30887097,10.1612903 L13.9354839,10.1612903 C14.4181452,10.1612903 14.8064516,9.77298387 14.8064516,9.29032258 L14.8064516,8.70967742 C14.8064516,8.22701613 14.4181452,7.83870968 13.9354839,7.83870968 L7.30887097,7.83870968 L10.0487903,5.21129032 C10.4008065,4.87379032 10.4080645,4.31129032 10.0633065,3.96653226 L9.6641129,3.57096774 C9.32298387,3.22983871 8.77137097,3.22983871 8.43387097,3.57096774 L3.61814516,8.38306452 C3.27701613,8.72419355 3.27701613,9.27580645 3.61814516,9.61330645 L8.43387097,14.4290323 C8.775,14.7701613 9.3266129,14.7701613 9.6641129,14.4290323 L10.0633065,14.0334677 C10.4080645,13.6887097 10.4008065,13.1262097 10.0487903,12.7887097 Z" id="Shape"></path>
+                </g>
+                <rect id="Rectangle-4" fill="#FEC601" x="23" y="3" width="13" height="13"></rect>
+                <rect id="Rectangle-4-Copy" fill="#1865AF" x="40" y="3" width="13" height="13"></rect>
+                <rect id="Rectangle-4-Copy-2" fill="#D21517" x="56" y="3" width="13" height="13"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

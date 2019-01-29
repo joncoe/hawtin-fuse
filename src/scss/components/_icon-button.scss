@@ -1,0 +1,18 @@
+.icon-button {
+  display: inline-block;
+  background-color: $fuse-blue-dark;
+  padding: .75rem 1.5rem;
+  font-size: 1rem;
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &-text {
+    margin-left: 0.5rem;
+  }
+
+  span {
+    display: inline-block;
+  }
+}
