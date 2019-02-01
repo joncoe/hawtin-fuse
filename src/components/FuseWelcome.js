@@ -4,9 +4,6 @@ import {Quad} from 'gsap/src/uncompressed/easing/EasePack';
 
 import quotes from './data/quotes';
 
-import {
-  Link
-} from 'react-router-dom';
 
 class FuseWelcome extends Component {
 

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import FuseWelcome from './FuseWelcome';
 import Albums from './Albums';
 import AlbumDetails from './AlbumDetails';
+import {TweenMax} from 'gsap';
 
 
 import {
@@ -25,8 +26,22 @@ class Fuse extends Component {
 
     this.selectedAlbum = this.state.albums[0];
 
-    console.log(this.state);
+    // this.titleRef = React.createRef();
+    // this.titleNode = null;
     
+    
+  }
+
+  componentDidMount() {
+
+    // const titleNode = this.titleRef;
+    // const vh = window.innerHeight;
+    // const half = vh / 2;
+
+    // console.log(titleNode);
+    // TweenMax.set(titleNode, {y: 200})
+    // console.log(this.titleNode);
+    // TweenMax.to(this.titleNode, 1, {y:200});
   }
 
   selectAlbum(albumIndex) {
@@ -36,22 +51,19 @@ class Fuse extends Component {
     })
 
     this.selectedAlbum = this.state.albums[albumIndex];
-   
-
     this.props.history.push('/album/' + this.selectedAlbum.key);
 
   }
 
   render() {
-
-
     return (
       <div>
 
-
+        <FuseTitle ref={div => this.titleNode = div}/>
+    {/*
         <Route exact path="/" component={FuseTitle} />
         <Route path="/albums" component={FuseTitle} />
-
+    */}
         <Switch>
 
           <Route exact path="/" component={FuseWelcome} />
@@ -65,7 +77,7 @@ class Fuse extends Component {
             }}
           />
 
-
+  
           <Route 
             exact
             path="/album/:albumName"
