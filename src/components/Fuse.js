@@ -7,7 +7,8 @@ import AlbumDetails from './AlbumDetails';
 
 import {
   Route,
-  Switch
+  Switch,
+  withRouter
 } from 'react-router-dom';
 import NotFound404 from './NotFound404';
 import FuseTitle from './FuseTitle';
@@ -19,13 +20,33 @@ class Fuse extends Component {
   constructor(props) {
     super(props);
     this.state = albumData;
+
+    this.selectAlbum = this.selectAlbum.bind(this);
+
+    this.selectedAlbum = this.state.albums[0];
+    
+  }
+
+  selectAlbum(albumIndex) {
+    console.log(albumIndex);
+    // let selectedAlbum = this.state.albums[0];
+    this.setState({
+      currentAlbumIndex: albumIndex
+    })
+
+    this.selectedAlbum = this.state.albums[albumIndex];
+   
+    console.log(this.selectedAlbum);
+
+    this.props.history.push('/album/' + this.selectedAlbum.key);
+
+    // console.log(this);
   }
 
   render() {
 
-    let selectedAlbum = this.state.albums[0];
 
-    console.log(selectedAlbum);
+    // console.log(selectedAlbum);
 
     return (
       <div>
@@ -37,14 +58,19 @@ class Fuse extends Component {
         <Switch>
 
           <Route exact path="/" component={FuseWelcome} />
-          <Route path="/albums" component={Albums} />
+          <Route 
+          path="/albums" 
+            render={(props) => {
+              return <Albums {...props} selectAlbumFunc={this.selectAlbum} />
+            }}
+          />
 
 
           <Route 
             exact
             path="/album/:albumName"
             render={(props) => {
-              return <AlbumDetails {...props} selectedAlbumInfo={selectedAlbum}/>
+              return <AlbumDetails {...props} selectedAlbumInfo={this.selectedAlbum}/>
             }}
 
           />
@@ -60,4 +86,4 @@ class Fuse extends Component {
   }
 }
 
-export default Fuse;
+export default withRouter(Fuse);
