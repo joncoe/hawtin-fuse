@@ -24,29 +24,26 @@ class Fuse extends Component {
     this.selectAlbum = this.selectAlbum.bind(this);
 
     this.selectedAlbum = this.state.albums[0];
+
+    console.log(this.state);
     
   }
 
   selectAlbum(albumIndex) {
-    console.log(albumIndex);
-    // let selectedAlbum = this.state.albums[0];
+
     this.setState({
       currentAlbumIndex: albumIndex
     })
 
     this.selectedAlbum = this.state.albums[albumIndex];
    
-    console.log(this.selectedAlbum);
 
     this.props.history.push('/album/' + this.selectedAlbum.key);
 
-    // console.log(this);
   }
 
   render() {
 
-
-    // console.log(selectedAlbum);
 
     return (
       <div>
@@ -61,7 +58,10 @@ class Fuse extends Component {
           <Route 
           path="/albums" 
             render={(props) => {
-              return <Albums {...props} selectAlbumFunc={this.selectAlbum} />
+              return <Albums {...props} 
+              selectAlbumFunc={this.selectAlbum}
+              market={this.state.market}
+              albums={this.state.albums}/>
             }}
           />
 
@@ -70,7 +70,10 @@ class Fuse extends Component {
             exact
             path="/album/:albumName"
             render={(props) => {
-              return <AlbumDetails {...props} selectedAlbumInfo={this.selectedAlbum}/>
+              return <AlbumDetails 
+              {...props}
+              market={this.state.market}
+              selectedAlbumInfo={this.selectedAlbum}/>
             }}
 
           />

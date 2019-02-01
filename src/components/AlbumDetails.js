@@ -14,6 +14,8 @@ class AlbumDetails extends Component {
   constructor(props) {
     super(props);
     this.tracksArr = [];
+    console.log(this.props);
+    this.market = this.props.market;
   }
 
   componentDidMount() {
@@ -27,13 +29,11 @@ class AlbumDetails extends Component {
   render() {
 
     const { match: { params } } = this.props;
-    const albumName = params.albumName;
 
     const currentAlbum = this.props.selectedAlbumInfo;
-    // console.log(this.props.selectedAlbumInfo);
     const albumTitle = currentAlbum.title;
     const trackList = currentAlbum.trackList;
-    const coverArt = currentAlbum.cover;
+    const coverArt = currentAlbum.artwork;
     const albumInfo = currentAlbum.albumInfo;
 
     return (
@@ -66,8 +66,8 @@ class AlbumDetails extends Component {
         </div>
 
         <div className="fuse-button-container">
-          <ShoppingCartButton urlText="Vinyl" url="http://www.m-nus.com" />
-          <ShoppingCartButton urlText="Digital" url="http://www.m-nus.com" />
+          <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
+          <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
         </div>
 
 

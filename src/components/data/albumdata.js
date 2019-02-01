@@ -2,11 +2,16 @@ const albumdata = {
   currentAlbum: '',
   currentTitle: '',
   currentAlbumIndex: 0,
+  market: {
+    vinylUrl: 'http://www.m-nus.com/',
+    digitalUrl: 'http://www.plus8.com/',
+  },
   albums: [
     {
       key: 'dimension-intrusion',
       title: 'dimension intrusion',
-      cover: 'artwork-dimension-intrusion.jpg',
+      cover: 'cover-dimension-intrusion.jpg',
+      artwork: 'artwork-dimension-intrusion.jpg',
       trackList: [
         {
           recordSide: 'a1',
@@ -23,9 +28,10 @@ const albumdata = {
       albumInfo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel lectus vitae tortor finibus sollicitudin. Proin eu lacus elit. Praesent interdum quam ut sem vestibulum eleifend. Sed sodales malesuada eros vel volutpat. Fusce efficitur mauris a suscipit luctus. Nulla facilisi. Duis in convallis enim, ut accumsan enim.'
     },
     {
-      key: 'train-tracks',
+      key: 'train-tracs',
       title: 'train tracs',
-      cover: 'artwork-train-tracs.jpg',
+      cover: 'cover-train-tracs.jpg',
+      artwork: 'artwork-train-tracs.jpg',
       trackList: [
         {
           recordSide: 'a1',
@@ -49,7 +55,8 @@ const albumdata = {
     {
       key: 'computer-brain',
       title: 'computer brain',
-      cover: 'artwork-computer-brain.jpg',
+      cover: 'cover-computer-brain.jpg',
+      artwork: 'artwork-computer-brain.jpg',
       trackList: [
         {
           recordSide: 'a1',
