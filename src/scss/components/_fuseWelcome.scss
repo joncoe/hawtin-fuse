@@ -11,8 +11,7 @@
 
   .fuse-header {
     @media screen and (min-width: 768px) {
-      // margin-top: -11rem;
-      margin-top: 0 !important;
+      margin-top: -11rem;
     }
   }
 }
@@ -38,23 +37,16 @@
   }
 }
 
-// .fuse-header {
-
-//   a {
-//     display: inline-block;
-//     transform-origin: 50% 0;
-//     transition-duration: 1s;
-//     transition-property: transform;
-//     tra
-    
-//     h2 {
-//       margin: 2rem auto;
-//       line-height: 1.1em;
-//     }
-//   }
-// }
-
 .fuse-header {
-  // display: none;
-  // margin-top: 0;
+
+  margin-top: 1rem;
+  
+  a {
+    display: inline-block;
+    
+    h2 {
+      margin: rem auto;
+      line-height: 1.1em;
+    }
+  }
 }

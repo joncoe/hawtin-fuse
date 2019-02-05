@@ -55,7 +55,7 @@ class AlbumDetails extends Component {
         {trackList.map((track, i) => {
           return (
             <li ref={li => this.tracksArr[i] = li} key={i}>
-              <span className="fuse-tracklist-meta">{track.recordSide}</span> {track.title} <span className="fuse-tracklist-meta">{track.totalTime}</span>
+              <span className="fuse-tracklist-meta">{track.recordSide}.</span> {track.title} <span className="fuse-tracklist-meta">{track.totalTime}</span>
             </li>
           );
         })}

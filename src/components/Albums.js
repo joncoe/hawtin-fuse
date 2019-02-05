@@ -15,6 +15,10 @@ class Albums extends Component {
     this.props.selectAlbumFunc(i);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
 
     return (
