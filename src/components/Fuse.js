@@ -8,8 +8,7 @@ import {TweenMax} from 'gsap';
 
 import {
   Route,
-  Switch,
-  withRouter
+  Switch
 } from 'react-router-dom';
 import NotFound404 from './NotFound404';
 import FuseTitle from './FuseTitle';
@@ -55,15 +54,11 @@ class Fuse extends Component {
   render() {
     return (
       <div>
-
-        
-    {/*
-        <Route exact path="/" component={FuseTitle} />
-        <Route path="/albums" component={FuseTitle} />
-    */}
+      
         <Switch>
 
           <Route exact path="/" component={FuseWelcome} />
+
           <Route 
           path="/albums" 
             render={(props) => {
@@ -98,4 +93,4 @@ class Fuse extends Component {
   }
 }
 
-export default withRouter(Fuse);
+export default Fuse;

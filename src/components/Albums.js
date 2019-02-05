@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import ShoppingCartButton from './ShoppingCartButton';
+import FuseTitle from './FuseTitle';
 
 class Albums extends Component {
 
@@ -19,10 +20,11 @@ class Albums extends Component {
     return (
       <div>
 
+        <FuseTitle />
+
         <ul role="nav" className="album-navigation list-unstyled">
         {
           this.albums.map((album, i) => {
-            console.log(album);
             return (
               <li onClick={() => this.selectAlbum(i)} key={i} >
                 <img src={`/images/${album.cover}`} alt={album.title} />

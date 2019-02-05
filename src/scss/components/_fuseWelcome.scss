@@ -9,6 +9,12 @@
 
   }
 
+  .fuse-header {
+    @media screen and (min-width: 768px) {
+      // margin-top: -11rem;
+      margin-top: 0 !important;
+    }
+  }
 }
 
 .fuse-quote-rotation {
@@ -32,15 +38,23 @@
   }
 }
 
+// .fuse-header {
+
+//   a {
+//     display: inline-block;
+//     transform-origin: 50% 0;
+//     transition-duration: 1s;
+//     transition-property: transform;
+//     tra
+    
+//     h2 {
+//       margin: 2rem auto;
+//       line-height: 1.1em;
+//     }
+//   }
+// }
+
 .fuse-header {
-  .active {
-    transform: scale(0.75);
-  }
-  a {
-    display: inline-block;
-    transform-origin: 50% 0;
-    transition-duration: 1s;
-    transition-property: transform;
-    transition-timing-function: $out-expo;
-  }
+  // display: none;
+  // margin-top: 0;
 }

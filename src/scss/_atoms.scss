@@ -6,6 +6,7 @@ body {
   background-repeat: repeat-x;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 
   height: 100vh;
 }
@@ -40,7 +41,7 @@ h2 {
 .fuse-text {
   max-width: 540px;
   padding: 0 16px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   font-size: 14px;
   text-align: justify;
 }
