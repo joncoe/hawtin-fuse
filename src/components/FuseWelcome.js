@@ -3,6 +3,7 @@ import {TweenMax} from 'gsap';
 import {Quad} from 'gsap/src/uncompressed/easing/EasePack';
 
 import quotes from './data/quotes';
+import FuseTitle from './FuseTitle';
 
 
 class FuseWelcome extends Component {
@@ -51,25 +52,34 @@ class FuseWelcome extends Component {
   render() {
 
     return (   
-      <section className="fuse-quote-rotation">
-        <ul className="list-unstyled">
-          
-          {/* render quotes */}
-          {this.state.quotes.map((quote, i) => {
-            return (
-              <li ref={li => this.quotesArr[i] = li} key={i}>
-                <p>
-                  <q>
-                    {quote.quote}
-                  </q><br />
-                    {quote.media} {quote.date}
-                </p>
-              </li>
-            );
-          })}
+
+      <div className="homepage-block">
+        <div className="homepage-block-container">
+          <FuseTitle/>
+
+          <section className="fuse-quote-rotation">
+            <ul className="list-unstyled">
+              
+              {/* render quotes */}
+              {this.state.quotes.map((quote, i) => {
+                return (
+                  <li ref={li => this.quotesArr[i] = li} key={i}>
+                    <p>
+                      <q>
+                        {quote.quote}
+                      </q><br />
+                        {quote.media} {quote.date}
+                    </p>
+                  </li>
+                );
+              })}
+            
+            </ul>
+          </section>
         
-        </ul>
-      </section>
+        </div>
+      </div>
+
     );
   }
 }

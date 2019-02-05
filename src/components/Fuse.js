@@ -26,10 +26,7 @@ class Fuse extends Component {
 
     this.selectedAlbum = this.state.albums[0];
 
-    // this.titleRef = React.createRef();
-    // this.titleNode = null;
-    
-    
+  
   }
 
   componentDidMount() {
@@ -59,7 +56,7 @@ class Fuse extends Component {
     return (
       <div>
 
-        <FuseTitle ref={div => this.titleNode = div}/>
+        
     {/*
         <Route exact path="/" component={FuseTitle} />
         <Route path="/albums" component={FuseTitle} />

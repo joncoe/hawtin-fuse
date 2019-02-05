@@ -34,7 +34,7 @@ class FuseTitle extends Component {
           <span ref={span => this.dimensionsNode = span}>dimensions</span></NavLink></h1>
         </nav>
 
-        <h2 className="fuse-subtitle">Vinyl Box Set and Digital Collection</h2>
+        <h2 className="fuse-subtitle">Vinyl Box Set and <span className="nowrap">Digital Collection</span></h2>
       </header>
     );
   }
