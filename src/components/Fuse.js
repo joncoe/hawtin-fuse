@@ -4,6 +4,7 @@ import FuseWelcome from './FuseWelcome';
 import Albums from './Albums';
 import AlbumDetails from './AlbumDetails';
 import {TweenMax} from 'gsap';
+import TrackPlayer from './TrackPlayer';
 
 
 import {
@@ -62,7 +63,7 @@ class Fuse extends Component {
         <Route path="/albums" component={FuseTitle} />
     */}
         <Switch>
-
+{/*}
           <Route exact path="/" component={FuseWelcome} />
           
           <Route 
@@ -89,10 +90,10 @@ class Fuse extends Component {
           />
 
           <Route render={() => <NotFound404/>} />
+        */}
 
         </Switch>
-
-
+        <TrackPlayer/>
         
       </div>
     );
