@@ -27,6 +27,10 @@ class Fuse extends Component {
 
     this.selectedAlbum = this.state.albums[0];
 
+    this.loadTrack = this.loadTrack.bind(this);
+
+    this.trackPlayer = React.createRef();
+
   
   }
 
@@ -53,6 +57,18 @@ class Fuse extends Component {
 
   }
 
+  loadTrack(i){
+    
+
+    const trackTitle = this.state.albums[this.state.currentAlbumIndex].trackList[i].title;
+    const directory = this.state.albums[this.state.currentAlbumIndex].key;
+    this.trackPlayer.current.loadTrack(this.selectedAlbum, trackTitle, directory, i);
+    // console.log(this);
+    // this.setState({
+    //   isPlaying: true
+    // })
+  }
+
   render() {
     return (
       <div>
@@ -63,11 +79,11 @@ class Fuse extends Component {
         <Route path="/albums" component={FuseTitle} />
     */}
         <Switch>
-{/*}
+
           <Route exact path="/" component={FuseWelcome} />
           
           <Route 
-          path="/albums" 
+            path="/albums" 
             render={(props) => {
               return <Albums {...props} 
               selectAlbumFunc={this.selectAlbum}
@@ -84,16 +100,24 @@ class Fuse extends Component {
               return <AlbumDetails 
               {...props}
               market={this.state.market}
-              selectedAlbumInfo={this.selectedAlbum}/>
+              selectedAlbumInfo={this.selectedAlbum}
+              loadTrack={this.loadTrack}
+
+              
+              />
             }}
 
           />
 
           <Route render={() => <NotFound404/>} />
-        */}
+        
 
         </Switch>
-        <TrackPlayer/>
+        <TrackPlayer
+          isPlaying={this.state.isPlaying}
+          currentFile={this.state.currentFile}
+          ref={this.trackPlayer}
+        />
         
       </div>
     );

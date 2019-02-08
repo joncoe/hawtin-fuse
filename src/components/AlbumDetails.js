@@ -14,8 +14,9 @@ class AlbumDetails extends Component {
   constructor(props) {
     super(props);
     this.tracksArr = [];
-    console.log(this.props);
+    // console.log(this.props);
     this.market = this.props.market;
+    this.loadTrack = this.loadTrack.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,10 @@ class AlbumDetails extends Component {
 
   componentWillUnmount() {
     console.log('bye');
+  }
+
+  loadTrack(i) {
+    this.props.loadTrack(i);
   }
 
   render() {
@@ -54,7 +59,14 @@ class AlbumDetails extends Component {
         <ul className="fuse-tracklist list-unstyled">
         {trackList.map((track, i) => {
           return (
-            <li ref={li => this.tracksArr[i] = li} key={i}>
+            <li 
+                ref={li => this.tracksArr[i] = li} 
+                key={i} 
+                onClick={() => {
+                  this.loadTrack(i);
+                }
+              }
+            >
               <span className="fuse-tracklist-meta">{track.recordSide}.</span> {track.title} <span className="fuse-tracklist-meta">{track.totalTime}</span>
             </li>
           );

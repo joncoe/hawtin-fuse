@@ -7,6 +7,13 @@
   position: fixed;
   bottom: 0;
 
+  transform: translateY(100%);
+  transition: transform .8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+
+  &.opened {
+    transform: translateY(0);
+  }
+
   .track-title {
     text-align: center;
     font-weight: 600;
@@ -43,17 +50,17 @@
       -webkit-appearance: none;
       appearance: none;
       background-color: #005eab;
-      color: #fff;
+      color: #efefef;
       height: 14px;
     }
     
     progress[value]::-webkit-progress-bar {
       background-color: #005eab;      
-      color: #fff;
+      color: #efefef;
     }
     
     progress::-webkit-progress-value {
-      background-color: #fff;
+      background-color: #efefef;
     }
  
   }

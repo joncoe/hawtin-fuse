@@ -4,11 +4,11 @@ class TrackPlayer extends Component {
 
   constructor(props) {
     super(props);
-    // this.playerContainer = document.getElementById('player-container');
+
     this.audioPlayer = null;
     this.isPlaying = false;
-    this.playBtn = document.getElementById('play-btn');
-    this.progressBar = document.getElementById('seek-obj');
+    this.playBtn = null; 
+    this.progressBar = null;
 
     this.togglePlay = this.togglePlay.bind(this);
     this.initProgressBar = this.initProgressBar.bind(this);
@@ -21,7 +21,9 @@ class TrackPlayer extends Component {
       currentTime: this.initTime,
       totalLength: this.initTime,
       remainingTime: this.initTime,
-      currentTitle: 'train trac'
+      currentTitle: 'train trac',
+      currentFile: '',
+      isPlaying: false
     }
 
   }
@@ -44,9 +46,27 @@ class TrackPlayer extends Component {
 
   }
 
+  loadTrack(album, title, directory, index) {
+    
+    const file = `/musik/${directory}/${index}.mp3`;
+    // console.log(file);
+
+    this.setState({
+      currentTitle: title,
+      isPlaying: true,
+      currentFile: file
+    })
+
+    this.audioPlayer.load(file);
+
+    if (this.state.isPaused === true) {
+      this.togglePlay();
+    }
+    
+  }
+
   initProgressBar() {
     
-    // console.log(this.audioPlayer);
     let length = this.audioPlayer.duration;
     let current_time = this.audioPlayer.currentTime;
     let remaining_time = length - current_time;
@@ -59,17 +79,8 @@ class TrackPlayer extends Component {
     let currentTime = this.calculateCurrentValue(current_time);
 
     let remainingTime = this.calculateCurrentValue(remaining_time);
-
-
     
     this.progressBar.value = (this.audioPlayer.currentTime / this.audioPlayer.duration);
-    // this.progressBar.addEventListener("click", seek);
-
-    // if (this.audioPlayer.currentTime == this.audioPlayer.duration) {
-    //   // document.getElementById('play-btn').className = "";
-    // }
-
-
 
     this.setState({
       totalLength: totalLength,
@@ -82,6 +93,10 @@ class TrackPlayer extends Component {
     let percent = (event.clientX - this.progressBar.getBoundingClientRect().x) / this.progressBar.offsetWidth;
     this.audioPlayer.currentTime = percent * this.audioPlayer.duration;
     this.progressBar.value = percent / 100;
+  }
+
+  componentWillReceiveProps({isPlaying}) {
+    this.setState({...this.state,isPlaying})
   }
 
 
@@ -108,9 +123,13 @@ class TrackPlayer extends Component {
   render() {
     return (
       <div>
-        <div className="audio-player">
+        <div 
+          className={
+            this.state.isPlaying ? 'audio-player opened' : 'audio-player'
+          }
+        >
 
-          <div class="track-title">
+          <div className="track-title">
             {this.state.currentTitle}
           </div>
 
@@ -122,13 +141,13 @@ class TrackPlayer extends Component {
               onClick={this.togglePlay}
               className= { this.state.isPaused ? "paused" : "" }
               >
-              <i class="fas fa-play"></i>
-              <i class="fas fa-pause"></i>
+              <i className="fas fa-play"></i>
+              <i className="fas fa-pause"></i>
             </div>
 
             <div className="player-controls scrubber">
               
-              <div class="seek-obj-container">
+              <div className="seek-obj-container">
                 <progress id="seek-obj" value="0" max="1" 
                   ref={progress => this.progressBar = progress}
                   onClick={this.seek}
@@ -149,7 +168,7 @@ class TrackPlayer extends Component {
               ref={audioElement => this.audioPlayer = audioElement}
               onTimeUpdate={this.initProgressBar}
               >
-              <source src="/musik/dimension-intrusion/0.mp3" type="audio/mp3" />
+              <source src={this.state.currentFile} type="audio/mp3" />
             </audio>
           </div>
           
