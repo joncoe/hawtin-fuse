@@ -20,7 +20,8 @@ class TrackPlayer extends Component {
       isPaused: true,
       currentTime: this.initTime,
       totalLength: this.initTime,
-      remainingTime: this.initTime
+      remainingTime: this.initTime,
+      currentTitle: 'train trac'
     }
 
   }
@@ -41,15 +42,6 @@ class TrackPlayer extends Component {
       isPaused: !this.state.isPaused
     })
 
-
-    // if (this.audioPlayer.paused === false) {
-    //   this.audioPlayer.pause();
-    // //   // document.getElementById('play-btn').className = "";
-
-    // } else {
-    //   this.audioPlayer.play();
-    // //   // document.getElementById('play-btn').className = "pause";
-    // }
   }
 
   initProgressBar() {
@@ -87,16 +79,7 @@ class TrackPlayer extends Component {
   }
 
   seek(event) {
-
-    // console.log(event.clientX - this.progressBar.getBoundingClientRect().x);
-
-    // console.log(this.progressBar.getBoundingClientRect());
-
     let percent = (event.clientX - this.progressBar.getBoundingClientRect().x) / this.progressBar.offsetWidth;
-    // console.log('this.progressBar ', this.progressBar)
-    // console.log('event.offsetX ', event.clientX);
-    // console.log(percent);
-
     this.audioPlayer.currentTime = percent * this.audioPlayer.duration;
     this.progressBar.value = percent / 100;
   }
@@ -127,11 +110,39 @@ class TrackPlayer extends Component {
       <div>
         <div className="audio-player">
 
-          <div 
-            id="play-btn" 
-            ref={div => this.playBtn = div} 
-            onClick={this.togglePlay}
-            ></div>
+          <div class="track-title">
+            {this.state.currentTitle}
+          </div>
+
+          <div className="audio-player-interface">
+
+            <div 
+              id="play-btn" 
+              ref={div => this.playBtn = div} 
+              onClick={this.togglePlay}
+              className= { this.state.isPaused ? "paused" : "" }
+              >
+              <i class="fas fa-play"></i>
+              <i class="fas fa-pause"></i>
+            </div>
+
+            <div className="player-controls scrubber">
+              
+              <div class="seek-obj-container">
+                <progress id="seek-obj" value="0" max="1" 
+                  ref={progress => this.progressBar = progress}
+                  onClick={this.seek}
+                  ></progress>
+              </div>
+              
+            </div>
+
+            <div id="start-time">
+              {this.state.remainingTime}
+            </div>
+          
+          </div>
+          
 
           <div className="audio-wrapper" id="player-container">
             <audio id="audioPlayer" 
@@ -141,16 +152,7 @@ class TrackPlayer extends Component {
               <source src="/musik/dimension-intrusion/0.mp3" type="audio/mp3" />
             </audio>
           </div>
-          <div className="player-controls scrubber">
-            <p>Oslo <small>by</small> Holy Esque</p>
-            <span id="seek-obj-container">
-              <progress id="seek-obj" value="0" max="1" 
-                ref={progress => this.progressBar = progress}
-                onClick={this.seek}
-                ></progress>
-            </span>
-            <small id="start-time">{this.state.remainingTime}</small>
-          </div>
+          
         </div>
       </div>
     );

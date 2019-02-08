@@ -1,67 +1,96 @@
 .audio-player {
-  border: 1px solid lighten(#acacac, 20%);
+  padding-bottom: .5rem;
   text-align: center;
-  display: flex;
-  flex-flow: row;
-  margin: 4rem 0 4rem 0;
-  width: 600px;
-  
-  .album-image {
-    min-height: 100px;
-    width: 100px;
-    background-size: cover;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  position: fixed;
+  bottom: 0;
+
+  .track-title {
+    text-align: center;
+    font-weight: 600;
+    padding: 0 1rem 0;
+    transform: translateY(7px);
+  }
+
+  .audio-player-interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .seek-obj-container {
+    height: 14px;
   }
   
+
   .player-controls {
-    align-items: center;
-    justify-content: center;
-    margin-top: 2.5rem;
-    flex: 3;
+
+    &.scrubber {
+      flex: 1;
+      height: 14px;
+    }
     
     progress {
-      width: 90%;
+      width: 100%;
+      height: 14px;
     }
+
+
     
     progress[value] {
       -webkit-appearance: none;
       appearance: none;
-      background-color: white;
-      color: blue;
-      height: 5px;
+      background-color: #005eab;
+      color: #fff;
+      height: 14px;
     }
     
     progress[value]::-webkit-progress-bar {
-      background-color: white;
-      border-radius: 2px;
-      border: 1px solid lighten(#acacac, 20%);
-      color: blue;
+      background-color: #005eab;      
+      color: #fff;
     }
     
     progress::-webkit-progress-value {
-      background-color: blue;
+      background-color: #fff;
     }
-    
-    p {
-      font-size: 1.6rem;
-    }
+ 
   }
   
-  #play-btn {
-    background-image: url('http://imgur.com/JzQP8td.png');
-    background-size: cover;
-    width: 75px;
-    height: 75px;
-    margin: 2rem 0 2rem 2rem;
-    &.pause {
-      background-image: url('http://imgur.com/MbJn41l.png');
-    }
-  }
 }
 
 #start-time {
-  float: left; position: relative; left: 15px;
+  margin: 0 1rem;
+  padding-top: 4px;
 }
 
-#end-time {
-  float: left; position: relative; right: 20px;
+#play-btn {
+
+  font-size: 20px;
+  width: 42px;
+  height: 42px;
+  margin: 0 1rem;
+  background-color: #005eab;
+  border-radius: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  .fa-play {
+    display: none;
+  }
+  .fa-pause {
+    display: block;
+  }
+
+  &.paused {
+    .fa-play {
+      display: block;
+    }
+    .fa-pause {
+      display: none;
+    }
+  }
 }
