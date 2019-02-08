@@ -53,40 +53,50 @@ class TrackPlayer extends Component {
 
     this.setState({
       currentTitle: title,
-      isPlaying: true,
       currentFile: file
     })
 
     this.audioPlayer.load(file);
 
-    if (this.state.isPaused === true) {
+    this.audioPlayer.onerror = function() {
+      console.log("Error " + this.audioPlayer.error.code + "; details: " + this.audioPlayer.error.message);
+    }
+
+    if (this.state.isPlaying === false) {
       this.togglePlay();
+      this.setState({
+        isPlaying: true
+      })
+    } else {
+      this.audioPlayer.play();
     }
     
   }
 
   initProgressBar() {
-    
-    let length = this.audioPlayer.duration;
-    let current_time = this.audioPlayer.currentTime;
-    let remaining_time = length - current_time;
+    if (this.audioPlayer.duration) {
 
-
-    // // calculate total length of value
-    let totalLength = this.calculateTotalValue(length);
-
-    // // calculate current value time
-    let currentTime = this.calculateCurrentValue(current_time);
-
-    let remainingTime = this.calculateCurrentValue(remaining_time);
-    
-    this.progressBar.value = (this.audioPlayer.currentTime / this.audioPlayer.duration);
-
-    this.setState({
-      totalLength: totalLength,
-      currentTime: currentTime,
-      remainingTime: remainingTime
-    })
+      let length = this.audioPlayer.duration;
+      let current_time = this.audioPlayer.currentTime;
+      let remaining_time = length - current_time;
+  
+  
+      // // calculate total length of value
+      let totalLength = this.calculateTotalValue(length);
+  
+      // // calculate current value time
+      let currentTime = this.calculateCurrentValue(current_time);
+  
+      let remainingTime = this.calculateCurrentValue(remaining_time);
+      
+      this.progressBar.value = (this.audioPlayer.currentTime / this.audioPlayer.duration);
+  
+      this.setState({
+        totalLength: totalLength,
+        currentTime: currentTime,
+        remainingTime: remainingTime
+      })
+    }
   }
 
   seek(event) {
