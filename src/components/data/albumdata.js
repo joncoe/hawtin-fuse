@@ -15,6 +15,7 @@ const albumdata = {
       title: 'dimension intrusion',
       cover: 'cover-dimension-intrusion.jpg',
       artwork: 'artwork-dimension-intrusion.jpg',
+      playList: true,
       trackList: [
         {
           recordSide: 'a1',
@@ -94,6 +95,7 @@ const albumdata = {
       title: 'train tracs',
       cover: 'cover-train-tracs.jpg',
       artwork: 'artwork-train-tracs.jpg',
+      playList: true,
       trackList: [
         {
           recordSide: 'a1',
@@ -134,6 +136,7 @@ const albumdata = {
       title: 'computer brain',
       cover: 'cover-computer-brain.jpg',
       artwork: 'artwork-computer-brain.jpg',
+      playList: false,
       trackList: [
         {
           recordSide: 'a1',
