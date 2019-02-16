@@ -6,7 +6,6 @@ const albumdata = {
     vinylUrl: 'http://www.m-nus.com/',
     digitalUrl: 'http://www.plus8.com/',
   },
-  playerOpened: false,
   currentFile: '',
 
   albums: [

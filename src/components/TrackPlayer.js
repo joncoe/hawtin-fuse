@@ -51,7 +51,8 @@ class TrackPlayer extends Component {
 
   loadTrack(album, title, directory, index) {
     
-    const file = `/musik/${directory}/${index}.mp3_`;
+    const file = `/musik/${directory}/${index}.mp3`;
+    console.log(file);
 
     this.setState({
       currentTitle: title,
@@ -61,13 +62,18 @@ class TrackPlayer extends Component {
 
     this.audioPlayer.load(file);
 
-    this.togglePlay();
-    this.setState({
-      isPlaying: true
-    })
+    this.audioPlayer.onerror = function() {
+      console.log("Error " + this.audioPlayer.error.code + "; details: " + this.audioPlayer.error.message);
+    }
 
-    this.audioPlayer.play();
-
+    // if (this.state.isPlaying === false) {
+      this.togglePlay();
+      this.setState({
+        isPlaying: true
+      })
+    // } else {
+      this.audioPlayer.play();
+    // }
     
   }
 
@@ -134,6 +140,7 @@ class TrackPlayer extends Component {
         <div 
           className={
             this.state.playerOpened ? 'audio-player opened' : 'audio-player'
+            // this.state.isPlaying ? 'audio-player opened' : 'audio-player opened'
           }
         >
 
