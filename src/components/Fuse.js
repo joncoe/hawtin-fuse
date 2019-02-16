@@ -59,14 +59,9 @@ class Fuse extends Component {
 
   loadTrack(i){
     
-
     const trackTitle = this.state.albums[this.state.currentAlbumIndex].trackList[i].title;
     const directory = this.state.albums[this.state.currentAlbumIndex].key;
     this.trackPlayer.current.loadTrack(this.selectedAlbum, trackTitle, directory, i);
-    // console.log(this);
-    this.setState({
-      isPlaying: true
-    })
   }
 
   render() {
@@ -115,7 +110,6 @@ class Fuse extends Component {
         </Switch>
 
         <TrackPlayer
-          isPlaying={this.state.isPlaying}
           currentFile={this.state.currentFile}
           ref={this.trackPlayer}
         />

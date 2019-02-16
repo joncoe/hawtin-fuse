@@ -23,7 +23,8 @@ class TrackPlayer extends Component {
       remainingTime: this.initTime,
       currentTitle: 'train trac',
       currentFile: '',
-      isPlaying: false
+      isPlaying: false,
+      playerOpened: false
     }
 
   }
@@ -53,7 +54,8 @@ class TrackPlayer extends Component {
 
     this.setState({
       currentTitle: title,
-      currentFile: file
+      currentFile: file,
+      playerOpened: true
     })
 
     this.audioPlayer.load(file);
@@ -62,14 +64,14 @@ class TrackPlayer extends Component {
       console.log("Error " + this.audioPlayer.error.code + "; details: " + this.audioPlayer.error.message);
     }
 
-    if (this.state.isPlaying === false) {
+    // if (this.state.isPlaying === false) {
       this.togglePlay();
       this.setState({
         isPlaying: true
       })
-    } else {
+    // } else {
       this.audioPlayer.play();
-    }
+    // }
     
   }
 
@@ -135,7 +137,8 @@ class TrackPlayer extends Component {
       <div>
         <div 
           className={
-            this.state.isPlaying ? 'audio-player opened' : 'audio-player'
+            this.state.playerOpened ? 'audio-player opened' : 'audio-player'
+            // this.state.isPlaying ? 'audio-player opened' : 'audio-player opened'
           }
         >
 
