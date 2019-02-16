@@ -51,7 +51,7 @@ class TrackPlayer extends Component {
 
   loadTrack(album, title, directory, index) {
     
-    const file = `/musik/${directory}/${index}.mp3_`;
+    const file = `/musik/${directory}/${index}.mp3`;
 
     this.setState({
       currentTitle: title,
