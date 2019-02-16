@@ -14,7 +14,6 @@ class AlbumDetails extends Component {
   constructor(props) {
     super(props);
     this.tracksArr = [];
-    // console.log(this.props);
     this.market = this.props.market;
     this.loadTrack = this.loadTrack.bind(this);
     this.preview = this.props.selectedAlbumInfo.playList;
@@ -83,7 +82,6 @@ class AlbumDetails extends Component {
                 onClick={() => {
                   this.loadTrack(i);
                 }}
-                // className= { this.state.isPaused ? "paused" : "" }
                 className={this.preview ? 'preview' : ''}
               
             >

@@ -30,7 +30,9 @@ class TrackPlayer extends Component {
   }
 
   componentDidMount() {
-    
+    this.audioPlayer.onended = () => {
+      // TO DO - go to the next track. 
+    }
   }
   
   togglePlay() {
@@ -49,8 +51,7 @@ class TrackPlayer extends Component {
 
   loadTrack(album, title, directory, index) {
     
-    const file = `/musik/${directory}/${index}.mp3`;
-    console.log(file);
+    const file = `/musik/${directory}/${index}.mp3_`;
 
     this.setState({
       currentTitle: title,
@@ -60,18 +61,13 @@ class TrackPlayer extends Component {
 
     this.audioPlayer.load(file);
 
-    this.audioPlayer.onerror = function() {
-      console.log("Error " + this.audioPlayer.error.code + "; details: " + this.audioPlayer.error.message);
-    }
+    this.togglePlay();
+    this.setState({
+      isPlaying: true
+    })
 
-    // if (this.state.isPlaying === false) {
-      this.togglePlay();
-      this.setState({
-        isPlaying: true
-      })
-    // } else {
-      this.audioPlayer.play();
-    // }
+    this.audioPlayer.play();
+
     
   }
 
@@ -138,7 +134,6 @@ class TrackPlayer extends Component {
         <div 
           className={
             this.state.playerOpened ? 'audio-player opened' : 'audio-player'
-            // this.state.isPlaying ? 'audio-player opened' : 'audio-player opened'
           }
         >
 
