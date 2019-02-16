@@ -17,18 +17,21 @@ class AlbumDetails extends Component {
     // console.log(this.props);
     this.market = this.props.market;
     this.loadTrack = this.loadTrack.bind(this);
+    this.preview = this.props.selectedAlbumInfo.playList;
   }
 
   componentDidMount() {
-    console.log('hello component');
+    // console.log('hello component');
   }
 
   componentWillUnmount() {
-    console.log('bye');
+    // console.log('bye');
   }
 
   loadTrack(i) {
-    this.props.loadTrack(i);
+    if (this.preview) {
+      this.props.loadTrack(i);
+    }
   }
 
   render() {
@@ -40,6 +43,19 @@ class AlbumDetails extends Component {
     const trackList = currentAlbum.trackList;
     const coverArt = currentAlbum.artwork;
     const albumInfo = currentAlbum.albumInfo;
+    const preview = currentAlbum.playList;
+    let previewMsg;
+
+    if (preview) {
+      previewMsg = <p className="album-details-player-instruction">
+        <i className="fas fa-headphones"></i> click / tap tracks
+      </p>
+    } else {
+      previewMsg = <p className="album-details-player-instruction no-preview">
+        vinyl exclusive. no audio preview.
+      </p>
+    }
+
 
     return (
       <div className="album-details-page">
@@ -56,6 +72,8 @@ class AlbumDetails extends Component {
         
         <h2>{albumTitle}</h2>
 
+        {previewMsg}
+
         <ul className="fuse-tracklist list-unstyled">
         {trackList.map((track, i) => {
           return (
@@ -64,8 +82,10 @@ class AlbumDetails extends Component {
                 key={i} 
                 onClick={() => {
                   this.loadTrack(i);
-                }
-              }
+                }}
+                // className= { this.state.isPaused ? "paused" : "" }
+                className={this.preview ? 'preview' : ''}
+              
             >
               <span className="fuse-tracklist-meta">{track.recordSide}.</span> {track.title} <span className="fuse-tracklist-meta">{track.totalTime}</span>
             </li>
