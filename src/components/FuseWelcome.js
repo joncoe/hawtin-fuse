@@ -5,6 +5,12 @@ import {Quad} from 'gsap/src/uncompressed/easing/EasePack';
 import quotes from './data/quotes';
 import FuseTitle from './FuseTitle';
 
+import {
+  // CSSTransition,
+  // Transition,
+  TransitionGroup
+} from 'react-transition-group';
+
 
 class FuseWelcome extends Component {
 
@@ -55,7 +61,9 @@ class FuseWelcome extends Component {
 
       <div className="homepage-block">
         <div className="homepage-block-container">
-          <FuseTitle/>
+          <TransitionGroup>
+            <FuseTitle/>
+          </TransitionGroup>
 
           <section className="fuse-quote-rotation">
             <ul className="list-unstyled">

@@ -59,12 +59,7 @@ class Albums extends Component {
     return (
       <div>
       <TransitionGroup>
-        
-
-        
-          <FuseTitle/>
-        
-
+        <FuseTitle/>
       </TransitionGroup>
 
 

@@ -3,13 +3,10 @@ import {
   NavLink
 } from 'react-router-dom';
 
-// import {TweenMax} from 'gsap';
-// import {Expo, Quad} from 'gsap/src/uncompressed/easing/EasePack';
+import {TweenMax} from 'gsap';
+import {Expo} from 'gsap/src/uncompressed/easing/EasePack';
 
-import {
-  // CSSTransition,
-  Transition
-} from 'react-transition-group';
+import Transition from "react-transition-group/Transition";
 
 
 class FuseTitle extends Component {
@@ -22,12 +19,21 @@ class FuseTitle extends Component {
 
   onEnter = () => {
     console.log("onEnter fuse Title");
+    TweenMax.set(this.titleNode, {
+      autoAlpha: 0,
+      y: '-100%'
+    });
   };
   onEntering = () => {
     console.log("onEntering fuse Title");
   };
   onEntered = () => {
     console.log("onEntered fuse Title");
+    TweenMax.to(this.titleNode, 1, {
+      autoAlpha: 1,
+      y: '0%',
+      ease: Expo.easeOut
+    });
   };
   onExit = () => {
     console.log("onExit fuse Title");
@@ -69,6 +75,7 @@ class FuseTitle extends Component {
     return (
       <Transition
         {...props}
+        appear={true}
         timeout={0}
         mountOnEnter
         unmountOnExit
