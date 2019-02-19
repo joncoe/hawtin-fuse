@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
-
 import ShoppingCartButton from './ShoppingCartButton';
 
-library.add(faArrowAltCircleLeft);
+
 
 class AlbumDetails extends Component {
 
@@ -35,7 +31,7 @@ class AlbumDetails extends Component {
 
   render() {
 
-    const { match: { params } } = this.props;
+    // const { match: { params } } = this.props;
 
     const currentAlbum = this.props.selectedAlbumInfo;
     const albumTitle = currentAlbum.title;

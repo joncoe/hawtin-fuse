@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import ShoppingCartButton from './ShoppingCartButton';
 import FuseTitle from './FuseTitle';
+
+// import {TweenMax} from 'gsap';
+// import {Expo, Quad} from 'gsap/src/uncompressed/easing/EasePack';
+
+import {
+  // CSSTransition,
+  // Transition,
+  TransitionGroup
+} from 'react-transition-group';
+// import {TransitionMotion} from 'react-motion'
 
 class Albums extends Component {
 
@@ -9,6 +19,9 @@ class Albums extends Component {
     super(props);
     this.albums = this.props.albums;
     this.market = this.props.market;
+    this.fuseTitle = null;
+
+
   }
 
   selectAlbum(i) {
@@ -19,14 +32,44 @@ class Albums extends Component {
     window.scrollTo(0, 0);
   }
 
+  fuseTitleEnter() {
+    console.log('animate me')
+    // TweenMax.set(this.fuseTitle, {
+    //   x: "100%",
+    //   opacity: 0
+    // });
+    // TweenMax.to(this.fuseTitle, .5, {
+    //   x: "0%",
+    //   opacity: 1
+    // });
+  }
+
+
+
+  // onEnter={() => { console.log(key + ' enter') }}
+  // onEntering={() => { console.log(key + ' entering') }}
+  // onEntered={() => { console.log(key + ' entered') }}
+  // onExit={() => { console.log(key + ' exit') }}
+  // onExiting={() => { console.log(key + ' exiting') }}
+  // onExited={() => { console.log(key + ' exited') }}
+
+
   render() {
 
     return (
       <div>
+      <TransitionGroup>
+        
 
-        <FuseTitle />
+        
+          <FuseTitle/>
+        
 
-        <ul role="nav" className="album-navigation list-unstyled">
+      </TransitionGroup>
+
+
+
+        <ul className="album-navigation list-unstyled">
         {
           this.albums.map((album, i) => {
             return (

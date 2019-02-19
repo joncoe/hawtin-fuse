@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import FuseWelcome from './FuseWelcome';
 import Albums from './Albums';
 import AlbumDetails from './AlbumDetails';
-import {TweenMax} from 'gsap';
+// import {TweenMax} from 'gsap';
 import TrackPlayer from './TrackPlayer';
 
 
@@ -13,7 +13,6 @@ import {
   withRouter
 } from 'react-router-dom';
 import NotFound404 from './NotFound404';
-import FuseTitle from './FuseTitle';
 
 import albumData from './data/albumdata';
 
