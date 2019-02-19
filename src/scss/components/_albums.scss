@@ -1,17 +1,22 @@
-ul {
-  max-width: 920px;
-  margin: 0 auto;
-  &.album-navigation {
-    display: flex;
-
-    padding: 0 20px;
-
-    li {
-      padding: 20px;
-      cursor: pointer;
-      img {
-        width: 100%;
+.albums-container {
+  padding-bottom: 10rem;
+  
+  ul {
+    max-width: 920px;
+    margin: 0 auto;
+    &.album-navigation {
+      display: flex;
+  
+      padding: 0 20px;
+  
+      li {
+        padding: 20px;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
       }
     }
   }
 }
+

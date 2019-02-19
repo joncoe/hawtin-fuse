@@ -18,17 +18,17 @@ const albumdata = {
       trackList: [
         {
           recordSide: 'a1',
-          title: 'A New Day',
+          title: 'a new day',
           totalTime: '3:54'
         },
         {
           recordSide: 'a2',
-          title: 'Downbeat',
+          title: 'downbeat',
           totalTime: '5:25'
         },
         {
           recordSide: 'a3',
-          title: 'siac',
+          title: 'slac',
           totalTime: '3:20'
         },
         {

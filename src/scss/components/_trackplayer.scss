@@ -6,12 +6,16 @@
   color: #000;
   position: fixed;
   bottom: 0;
-
+  visibility: hidden;
   transform: translateY(100%);
-  transition: transform .8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  transition: .8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  transition-property: transform;
 
   &.opened {
+    visibility: visible;
     transform: translateY(0);
+    transition-property: transform;
+    transition: .8s cubic-bezier(0.190, 1.000, 0.220, 1.000);
   }
 
   .track-title {
