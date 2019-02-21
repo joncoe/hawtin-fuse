@@ -1,5 +1,5 @@
 .albums-container {
-  padding-bottom: 10rem;
+  
   
   ul {
     max-width: 920px;
@@ -8,6 +8,7 @@
       display: flex;
   
       padding: 0 20px;
+      margin: 0 auto 70px;
   
       li {
         padding: 20px;
@@ -20,3 +21,15 @@
   }
 }
 
+.album-text-container {
+  background-color: #fff;
+  padding-bottom: 10rem;
+  background-image: url('images/bg-album-text.svg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  .fuse-text {
+    color: #000;
+    padding-top: 150px;
+  }
+}
