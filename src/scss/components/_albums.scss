@@ -1,5 +1,6 @@
 .albums-container {
   
+  position: relative;
   
   ul {
     max-width: 920px;
@@ -32,4 +33,9 @@
     color: #000;
     padding-top: 150px;
   }
+}
+
+#album-text-clipper {
+  overflow-y: hidden;
+  margin-top: -100px;
 }

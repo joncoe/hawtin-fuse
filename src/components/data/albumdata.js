@@ -131,10 +131,10 @@ const albumdata = {
       albumInfo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel lectus vitae tortor finibus sollicitudin. Proin eu lacus elit. Praesent interdum quam ut sem vestibulum eleifend. Sed sodales malesuada eros vel volutpat. Fusce efficitur mauris a suscipit luctus. Nulla facilisi. Duis in convallis enim, ut accumsan enim.'
     },
     {
-      key: 'computer-brain',
-      title: 'computer brain',
-      cover: 'cover-computer-brain.jpg',
-      artwork: 'artwork-computer-brain.jpg',
+      key: 'computer-space',
+      title: 'computer space',
+      cover: 'cover-computer-space.jpg',
+      artwork: 'artwork-computer-space.jpg',
       playList: false,
       trackList: [
         {

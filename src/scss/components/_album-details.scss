@@ -3,7 +3,7 @@
   width: 100vw;
   min-height: 100vh;
   color: $black;
-  padding: 1rem 0 10rem;
+  padding: 1rem 0 5rem;
   text-align: center;
   overflow-x: hidden;
   position: relative;
@@ -77,4 +77,6 @@
   margin: 3rem auto;
   display: flex;
   justify-content: space-around;
+  position: relative;
+  z-index: 50;
 }

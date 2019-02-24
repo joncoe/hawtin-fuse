@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import ShoppingCartButton from './ShoppingCartButton';
-
+import Footer from './Footer';
 
 
 class AlbumDetails extends Component {
@@ -53,50 +53,53 @@ class AlbumDetails extends Component {
 
 
     return (
-      <div className="album-details-page">
+      <div>
+        <div className="album-details-page">
 
-        <nav className="go-back">
-          <Link to="/albums"><img src="/images/back.svg" alt="Go back to albums page"/></Link>
-        </nav>
+          <nav className="go-back">
+            <Link to="/albums"><img src="/images/back.svg" alt="Go back to albums page"/></Link>
+          </nav>
 
-        <h1>f.u.s.e.</h1>
+          <h1>f.u.s.e.</h1>
 
-        <div className="fuse-artwork">
-          <img src={`/images/${coverArt}`} alt={`Cover for ${albumTitle}`}/>
+          <div className="fuse-artwork">
+            <img src={`/images/${coverArt}`} alt={`Cover for ${albumTitle}`}/>
+          </div>
+          
+          <h2>{albumTitle}</h2>
+
+          {previewMsg}
+
+          <ul className="fuse-tracklist list-unstyled">
+          {trackList.map((track, i) => {
+            return (
+              <li 
+                  ref={li => this.tracksArr[i] = li} 
+                  key={i} 
+                  onClick={() => {
+                    this.loadTrack(i);
+                  }}
+                  className={this.preview ? 'preview' : ''}
+                
+              >
+                <span className="fuse-tracklist-meta">{track.recordSide}.</span> {track.title} <span className="fuse-tracklist-meta">{track.totalTime}</span>
+              </li>
+            );
+          })}
+          </ul>
+
+          <div className="fuse-album-info">
+            {albumInfo}
+          </div>
+
+          <div className="fuse-button-container">
+            <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
+            <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
+          </div>
+
+          
         </div>
-        
-        <h2>{albumTitle}</h2>
-
-        {previewMsg}
-
-        <ul className="fuse-tracklist list-unstyled">
-        {trackList.map((track, i) => {
-          return (
-            <li 
-                ref={li => this.tracksArr[i] = li} 
-                key={i} 
-                onClick={() => {
-                  this.loadTrack(i);
-                }}
-                className={this.preview ? 'preview' : ''}
-              
-            >
-              <span className="fuse-tracklist-meta">{track.recordSide}.</span> {track.title} <span className="fuse-tracklist-meta">{track.totalTime}</span>
-            </li>
-          );
-        })}
-        </ul>
-
-        <div className="fuse-album-info">
-          {albumInfo}
-        </div>
-
-        <div className="fuse-button-container">
-          <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
-          <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
-        </div>
-
-
+        <Footer/>
       </div>
     );
   }

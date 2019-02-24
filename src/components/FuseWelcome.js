@@ -4,6 +4,7 @@ import {Quad} from 'gsap/src/uncompressed/easing/EasePack';
 
 import quotes from './data/quotes';
 import FuseTitle from './FuseTitle';
+import ShoppingCartButton from './ShoppingCartButton';
 
 import {
   // CSSTransition,
@@ -20,6 +21,10 @@ class FuseWelcome extends Component {
     this.parentElement = null;
     this.myTween = null;
     this.quotesArr = [];
+
+    this.market = this.props.market;
+
+    console.log('this.market ', this.market);
 
     this.state = {
       quotes: quotes
@@ -48,6 +53,7 @@ class FuseWelcome extends Component {
   }
 
   componentDidMount() {
+
     this.cycleQuotes();
   }
 
@@ -65,6 +71,12 @@ class FuseWelcome extends Component {
             <FuseTitle/>
           </TransitionGroup>
 
+          <div className="fuse-button-container">
+            <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
+            <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
+          </div>
+
+          
           <section className="fuse-quote-rotation">
             <ul className="list-unstyled">
               
@@ -84,6 +96,7 @@ class FuseWelcome extends Component {
             
             </ul>
           </section>
+
         
         </div>
       </div>

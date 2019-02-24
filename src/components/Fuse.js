@@ -43,14 +43,6 @@ class Fuse extends Component {
 
   componentDidMount() {
 
-    // const titleNode = this.titleRef;
-    // const vh = window.innerHeight;
-    // const half = vh / 2;
-
-    // console.log(titleNode);
-    // TweenMax.set(titleNode, {y: 200})
-    // console.log(this.titleNode);
-    // TweenMax.to(this.titleNode, 1, {y:200});
 
     this.props.history.listen((location, action) => {
       if(location.pathname === '/albums') {
@@ -66,19 +58,7 @@ class Fuse extends Component {
 
   changeSVGBackground() {
     console.log('change svg background');
-    TweenMax.to(this.path1, 2, {
-      attr:{
-        d:"M0 1273.284v157.322l1281.614-508.109L1483.5 1145.5l2891.775 285.106v-157.322L3344 1248l-1804.5-190-257.886-154z"
-       }
 
-    })
-
-    TweenMax.to(this.path2, 2, {
-      attr:{
-        d:"M0 1273.284v157.322l1281.614-508.109L1483.5 1145.5l2891.775 285.106v-157.322L3344 1248l-1804.5-190-257.886-154z"
-       }
-
-    })
   }
 
   selectAlbum(albumIndex) {
@@ -104,14 +84,7 @@ class Fuse extends Component {
       <div>
 
       <svg width="100%" height="100%" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" id="svg-bg" preserveAspectRatio="none">
-        <g fill="none" fillRule="evenodd">
-          <path 
-          ref={div => this.path1 = div} 
-          fill="#FD0" d="M-394.386 772.014L-1676 1141.284v157.322l1281.614-508.109v-.001L389.748 931.52l2309.527 367.086v-157.322l-1028.268-63.779L389.748 886.166-394.386 772z" />
-          <path 
-          ref={div => this.path2 = div} 
-          fill="#FFCB05" d="M-279 185.035L720.567 29.483l581.731-67.885L-265.288 28.31z" />
-        </g>
+      <g fill="none" fillRule="evenodd"><path fill="#FD0" d="M-394.386 772.014L-1676 1141.284v157.322l1281.614-508.109v-.001L389.748 931.52l2309.527 367.086v-157.322l-1028.268-63.779L389.748 886.166-394.386 772z"/><path fill="#FFCB05" d="M-251.693 147.8L446.524 8.335 854.489-61-253.137 65.11z"/></g>
       </svg>
 
         
@@ -121,7 +94,16 @@ class Fuse extends Component {
     */}
         <Switch>
 
-          <Route exact path="/" component={FuseWelcome} />
+          <Route exact path="/" 
+          
+          render={(props) => {
+            return (
+            <FuseWelcome {...props} 
+            selectAlbumFunc={this.selectAlbum}
+            market={this.state.market}
+            albums={this.state.albums}/>)
+          }}
+          />
           
           <Route 
             path="/albums" 
@@ -160,6 +142,7 @@ class Fuse extends Component {
           currentFile={this.state.currentFile}
           ref={this.trackPlayer}
         />
+
         
       </div>
     );

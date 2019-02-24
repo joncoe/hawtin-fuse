@@ -18,35 +18,35 @@ class FuseTitle extends Component {
   }
 
   onEnter = () => {
-    console.log("onEnter fuse Title");
+    // console.log("onEnter fuse Title");
     TweenMax.set(this.titleNode, {
       autoAlpha: 0,
       y: '-100%'
     });
   };
   onEntering = () => {
-    console.log("onEntering fuse Title");
+    // console.log("onEntering fuse Title");
   };
   onEntered = () => {
-    console.log("onEntered fuse Title");
-    TweenMax.to(this.titleNode, 1, {
+    // console.log("onEntered fuse Title");
+    TweenMax.to(this.titleNode, 2, {
       autoAlpha: 1,
       y: '0%',
       ease: Expo.easeOut
     });
   };
   onExit = () => {
-    console.log("onExit fuse Title");
+    // console.log("onExit fuse Title");
   };
   onExiting = () => {
-    console.log("onExiting fuse Title");
+    // console.log("onExiting fuse Title");
   };
   onExited = () => {
-    console.log("onExited fuse Title");
+    // console.log("onExited fuse Title");
   };
 
   endHandler = (n, done) => {
-    console.log("endHandler box");
+    // console.log("endHandler box");
 
     // if (this.props.in) {
     //   console.log("endHandler box coming in");
