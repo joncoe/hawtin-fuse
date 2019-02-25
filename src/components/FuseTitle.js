@@ -15,7 +15,7 @@ class FuseTitle extends Component {
     super(props);
     this.titleNode = null;
     this.dimensionsNode = null;
-  }
+  } 
 
   onEnter = () => {
     // console.log("onEnter fuse Title");

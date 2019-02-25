@@ -1,0 +1,38 @@
+.fuse-title {
+  display: block;
+  z-index: 200;
+  line-height: 0;
+
+  &-fuse {
+    height: 120px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    width: 100%;
+    
+  }
+
+  &-container {
+    max-width: 100px;
+    margin: 0 auto;
+    
+    @media screen and (min-width: 768px) {
+      max-width: 140px;
+    }
+
+    @media screen and (min-width: 1140px) {
+      max-width: 200px;
+    }
+  }
+  span {
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+
+  a {
+    display: block;
+  }
+}

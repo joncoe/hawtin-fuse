@@ -21,6 +21,7 @@ class FuseWelcome extends Component {
     this.parentElement = null;
     this.myTween = null;
     this.quotesArr = [];
+    this.homepageBlock = null;
 
     this.market = this.props.market;
 
@@ -55,6 +56,16 @@ class FuseWelcome extends Component {
   componentDidMount() {
 
     this.cycleQuotes();
+
+    // if (window.innerWidth >= 768) {
+      let yPos = window.innerHeight / 2;
+      
+  
+      TweenMax.set(this.homepageBlock, {
+        y: yPos
+      });
+
+    // }
   }
 
   componentWillUnmount() {
@@ -65,11 +76,14 @@ class FuseWelcome extends Component {
 
     return (   
 
-      <div className="homepage-block">
+      <div className="homepage-block" ref={div => this.homepageBlock = div}>
         <div className="homepage-block-container">
+
+        {/*
           <TransitionGroup>
             <FuseTitle/>
           </TransitionGroup>
+        */}
 
           <div className="fuse-button-container">
             <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
