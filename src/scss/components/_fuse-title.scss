@@ -15,7 +15,7 @@
   // }
 
   &-container {
-    max-width: 100px;
+    max-width: 80px;
     margin: 0 auto;
     
     @media screen and (min-width: 768px) {
@@ -23,8 +23,12 @@
     }
 
     @media screen and (min-width: 1140px) {
-      max-width: 200px;
+      max-width: 160px;
     }
+  }
+
+  &-block {
+    margin: 1rem 0;
   }
   span {
     display: block;

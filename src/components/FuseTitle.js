@@ -95,7 +95,7 @@ class FuseTitle extends Component {
                 <span className="fuse-title-container"
                   ref={span => this.fuseTitleContainer = span} 
                 >
-                  <span className="fuse-title-fuse"
+                  <span className="fuse-title-fuse  fuse-title-block"
                     ref={span => this.fuse = span} 
                   >
                     <img 
@@ -103,7 +103,7 @@ class FuseTitle extends Component {
                       alt="f.u.s.e."
                     />
                   </span>
-                  <span className="fuse-title-dimensions"
+                  <span className="fuse-title-dimensions  fuse-title-block"
                     ref={span => this.dimensions = span} 
                   ><img src="images/title-dimensions.svg" alt="dimensions"/></span>
                 </span>
