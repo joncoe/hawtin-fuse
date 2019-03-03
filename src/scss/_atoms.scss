@@ -34,7 +34,12 @@ h2 {
 h2 {
   &.fuse-subtitle {
     font-family: courier, monospace;
-    font-size: 1.2rem;
+    line-height: 1.2em;
+    font-size: .8rem;
+
+    @media screen and (min-width: 767px) {
+      font-size: 1.2rem;
+    }
   }
 }
 

@@ -2,16 +2,17 @@
   display: block;
   z-index: 200;
   line-height: 0;
+  text-align: center;
 
-  &-fuse {
-    height: 120px;
-  }
+  // &-fuse {
+  //   height: 120px;
+  // }
   
-  @media screen and (min-width: 768px) {
-    position: fixed;
-    width: 100%;
+  // @media screen and (min-width: 768px) {
+  //   position: fixed;
+  //   width: 100%;
     
-  }
+  // }
 
   &-container {
     max-width: 100px;

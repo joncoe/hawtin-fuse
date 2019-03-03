@@ -89,8 +89,28 @@ class FuseTitle extends Component {
       >
         <header className="fuse-header"  ref={header => this.titleNode = header}>
           <nav>
-            <h1><NavLink to="/albums" activeClassName="activate" >f.u.s.e.<br />
-            <span ref={span => this.dimensionsNode = span}>dimensions</span></NavLink></h1>
+
+          <div className="fuse-title">
+              <NavLink to="/albums" activeClassName="activate" >
+                <span className="fuse-title-container"
+                  ref={span => this.fuseTitleContainer = span} 
+                >
+                  <span className="fuse-title-fuse"
+                    ref={span => this.fuse = span} 
+                  >
+                    <img 
+                      src="images/title-fuse.svg" 
+                      alt="f.u.s.e."
+                    />
+                  </span>
+                  <span className="fuse-title-dimensions"
+                    ref={span => this.dimensions = span} 
+                  ><img src="images/title-dimensions.svg" alt="dimensions"/></span>
+                </span>
+              </NavLink>
+          </div>
+
+
           </nav>
 
           <h2 className="fuse-subtitle">Vinyl Box Set and <span className="nowrap">Digital Collection</span></h2>
