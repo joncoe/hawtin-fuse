@@ -60,6 +60,7 @@
       background-color: #005eab;
       color: #efefef;
       height: 14px;
+      cursor: pointer;
     }
     
     progress[value]::-webkit-progress-bar {
@@ -92,6 +93,7 @@
   justify-content: center;
   align-items: center;
   color: #fff;
+  cursor: pointer;
 
   .fa-play {
     display: none;

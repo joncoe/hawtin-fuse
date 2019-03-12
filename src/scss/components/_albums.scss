@@ -8,12 +8,21 @@
     &.album-navigation {
       display: flex;
   
-      padding: 0 20px;
+      padding: 0 10px;
       margin: 0 auto 70px;
+
+      @media screen and (min-width: 768px) {
+        padding: 0 20px;
+      }
   
       li {
-        padding: 20px;
+        padding: 10px;
         cursor: pointer;
+
+        @media screen and (min-width: 768px) {
+          padding: 20px;
+        }
+        
         img {
           width: 100%;
         }
