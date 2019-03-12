@@ -43,7 +43,8 @@ const albumdata = {
         },
         {
           recordSide: 'c1',
-          title: '06'
+          title: 'substance abuse',
+          totalTime: '6:23'
         },
         {
           recordSide: 'c2',

@@ -68,6 +68,13 @@ class AlbumDetails extends Component {
           
           <h2>{albumTitle}</h2>
 
+          <div className="fuse-button-container">
+            <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
+            <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
+          </div>
+
+
+
           {previewMsg}
 
           <ul className="fuse-tracklist list-unstyled">
@@ -92,10 +99,7 @@ class AlbumDetails extends Component {
             {albumInfo}
           </div>
 
-          <div className="fuse-button-container">
-            <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
-            <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
-          </div>
+
 
           
         </div>
