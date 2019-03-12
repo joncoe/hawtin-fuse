@@ -6,6 +6,8 @@ import quotes from './data/quotes';
 import FuseTitle from './FuseTitle';
 import ShoppingCartButton from './ShoppingCartButton';
 
+import ReactSlickCarousel from './ReactSlickCarousel';
+
 import {
   // CSSTransition,
   // Transition,
@@ -83,6 +85,10 @@ class FuseWelcome extends Component {
           <TransitionGroup>
             <FuseTitle/>
           </TransitionGroup>
+
+
+          <ReactSlickCarousel/>
+
         
 
           <div className="fuse-button-container">
