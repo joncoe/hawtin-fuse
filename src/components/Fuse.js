@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import FuseWelcome from './FuseWelcome';
 import Albums from './Albums';
 import AlbumDetails from './AlbumDetails';
+import FuseTitle from './FuseTitle';
 // import {TweenMax} from 'gsap';
 import TrackPlayer from './TrackPlayer';
 
@@ -105,7 +106,7 @@ class Fuse extends Component {
       <svg width="100%" height="100%" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" id="svg-bg" preserveAspectRatio="none">
       <g fill="none" fillRule="evenodd"><path fill="#FD0" d="M-394.386 772.014L-1676 1141.284v157.322l1281.614-508.109v-.001L389.748 931.52l2309.527 367.086v-157.322l-1028.268-63.779L389.748 886.166-394.386 772z"/><path fill="#FFCB05" d="M-251.693 147.8L446.524 8.335 854.489-61-253.137 65.11z"/></g>
       </svg>
-   
+      {/* 
       <div className="fuse-title">
           <NavLink to="/albums" activeClassName="activate" >
             <span className="fuse-title-container"
@@ -127,11 +128,15 @@ class Fuse extends Component {
       </div>
 
         
-    {/*
-        <Route exact path="/" component={FuseTitle} />
-        <Route path="/albums" component={FuseTitle} />
     */}
-        <Switch>
+
+
+
+{/* 
+    <Route exact path="/" component={FuseTitle} />
+    <Route path="/albums" component={FuseTitle} />
+  */}
+    <Switch>
 
           <Route exact path="/" 
           

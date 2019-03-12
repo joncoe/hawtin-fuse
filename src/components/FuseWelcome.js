@@ -58,12 +58,12 @@ class FuseWelcome extends Component {
     this.cycleQuotes();
 
     // if (window.innerWidth >= 768) {
-      let yPos = window.innerHeight / 2;
+      // let yPos = window.innerHeight / 2;
       
   
-      TweenMax.set(this.homepageBlock, {
-        y: yPos
-      });
+      // TweenMax.set(this.homepageBlock, {
+      //   y: yPos
+      // });
 
     // }
   }
@@ -79,11 +79,11 @@ class FuseWelcome extends Component {
       <div className="homepage-block" ref={div => this.homepageBlock = div}>
         <div className="homepage-block-container">
 
-        {/*
+        
           <TransitionGroup>
             <FuseTitle/>
           </TransitionGroup>
-        */}
+        
 
           <div className="fuse-button-container">
             <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />

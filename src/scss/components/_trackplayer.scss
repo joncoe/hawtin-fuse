@@ -5,6 +5,7 @@
   background: #fff;
   color: #000;
   position: fixed;
+  z-index: 3000;
   bottom: 0;
   visibility: hidden;
   transform: translateY(100%);
@@ -29,6 +30,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    max-width: 1024px;
+    margin: 0 auto;
   }
 
   .seek-obj-container {
