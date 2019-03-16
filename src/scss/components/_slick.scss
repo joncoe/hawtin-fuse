@@ -1,0 +1,23 @@
+.slick-container {
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+  img {
+    width: 100%;
+    max-width: 800px;
+    border: solid 3px white;
+    margin: 2rem auto 0;
+    
+  }
+
+  .slick-dots li button:before {
+    content: '';
+    background-color: white;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+
+  .slick-dots li.slick-active button:before {
+    background-color: $fuse-yellow;
+  }
+}
