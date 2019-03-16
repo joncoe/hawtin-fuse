@@ -19,6 +19,27 @@
   // }
 }
 
+.listen-and-preview-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.listen-preview-button {
+  color: $fuse-blue-dark;
+  background-color: white;
+  display: inline-block;
+  margin: 2rem auto 1rem;
+  text-align: center;
+  padding: 1rem 1.2rem;
+  font-weight: 600;
+  transition: all .2s ease-out;
+
+  &:hover {
+    color: black;
+    background-color: $fuse-yellow;
+  }
+}
+
 .fuse-quote-rotation {
   max-width: 480px;
   margin: 0 auto;

@@ -8,6 +8,8 @@ import ShoppingCartButton from './ShoppingCartButton';
 
 import ReactSlickCarousel from './ReactSlickCarousel';
 
+import {NavLink} from 'react-router-dom';
+
 import {
   // CSSTransition,
   // Transition,
@@ -86,6 +88,10 @@ class FuseWelcome extends Component {
             <FuseTitle/>
           </TransitionGroup>
 
+          <div className="listen-and-preview-container">
+            <NavLink to="/albums" className="listen-preview-button">
+            <i className="fas fa-headphones"></i>  Details and Previews</NavLink>
+          </div>
 
           <ReactSlickCarousel/>
 
