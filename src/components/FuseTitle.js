@@ -73,49 +73,33 @@ class FuseTitle extends Component {
   render() {
     const { ...props } = this.props;
     return (
-      <Transition
-        {...props}
-        appear={true}
-        timeout={0}
-        mountOnEnter
-        unmountOnExit
-        onEnter={this.onEnter}
-        onEntering={this.onEntering}
-        onEntered={this.onEntered}
-        onExit={this.onExit}
-        onExiting={this.onExiting}
-        onExited={this.onExited}
-        addEndListener={this.endHandler}
-      >
+
         <header className="fuse-header"  ref={header => this.titleNode = header}>
-          <nav>
+          
 
-          <div className="fuse-title">
-              <NavLink to="/albums" activeClassName="activate" >
-                <span className="fuse-title-container"
-                  ref={span => this.fuseTitleContainer = span} 
-                >
-                  <span className="fuse-title-fuse  fuse-title-block"
-                    ref={span => this.fuse = span} 
+            <div className="fuse-title">
+                <NavLink to="/albums" activeClassName="activate" >
+                  <span className="fuse-title-container"
+                    ref={span => this.fuseTitleContainer = span} 
                   >
-                    <img 
-                      src="images/title-fuse.svg" 
-                      alt="f.u.s.e."
-                    />
+                    <span className="fuse-title-fuse  fuse-title-block"
+                      ref={span => this.fuse = span} 
+                    >
+                      <img 
+                        src="images/title-fuse.svg" 
+                        alt="f.u.s.e."
+                      />
+                    </span>
+                    <span className="fuse-title-dimensions  fuse-title-block"
+                      ref={span => this.dimensions = span} 
+                    ><img src="images/title-dimensions.svg" alt="dimensions"/></span>
                   </span>
-                  <span className="fuse-title-dimensions  fuse-title-block"
-                    ref={span => this.dimensions = span} 
-                  ><img src="images/title-dimensions.svg" alt="dimensions"/></span>
-                </span>
-              </NavLink>
-          </div>
-
-
-          </nav>
+                </NavLink>
+            </div>
 
           <h2 className="fuse-subtitle">Vinyl Box Set and <span className="nowrap">Digital Collection</span></h2>
         </header>
-      </Transition>
+      
     );
   }
 }

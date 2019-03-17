@@ -1,6 +1,7 @@
 .albums-container {
   
   position: relative;
+  overflow: auto;
   
   ul {
     max-width: 920px;
