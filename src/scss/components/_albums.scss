@@ -50,12 +50,20 @@
   background-size: 100% auto;
   background-repeat: no-repeat;
 
-  margin-top: 5%;
+  margin-top: 15%;
+
+  @media (min-width: 768px) {
+    margin-top: 5%;
+  }
 
   .fuse-text {
     color: #000;
-    // padding-top: 10%;
+    padding-top: 5%;
     background: #fff;
+
+    @media (min-width: 768px) {
+      padding-top: 0;
+    }
   }
 }
 

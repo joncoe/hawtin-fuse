@@ -76,9 +76,9 @@ class Albums extends Component {
 
     return (
       <div className="albums-container">
-      <TransitionGroup>
+      
         <FuseTitle/>
-      </TransitionGroup>
+      
 
 
 

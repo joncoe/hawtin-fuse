@@ -133,6 +133,7 @@ class Fuse extends Component {
           
           <Route 
             path="/albums" 
+            className="albums-component"
             render={(props) => {
               return (
               <TransitionGroup><Albums {...props} 
