@@ -29,6 +29,10 @@ class AlbumDetails extends Component {
     }
   }
 
+  createMarkup(html) {
+    return {__html: html};
+  }
+
   render() {
 
     // const { match: { params } } = this.props;
@@ -47,7 +51,7 @@ class AlbumDetails extends Component {
       </p>
     } else {
       previewMsg = <p className="album-details-player-instruction no-preview">
-        vinyl exclusive. no audio preview.
+      <i className="fas fa-volume-mute"></i> vinyl exclusive. no audio preview.
       </p>
     }
 
@@ -95,15 +99,13 @@ class AlbumDetails extends Component {
           })}
           </ul>
 
-          <div className="fuse-album-info">
-            {albumInfo}
-          </div>
+          <div className="fuse-album-info" dangerouslySetInnerHTML={this.createMarkup(albumInfo)}></div>
 
 
 
           
         </div>
-        <Footer/>
+
       </div>
     );
   }

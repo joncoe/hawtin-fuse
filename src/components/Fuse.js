@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import FuseWelcome from './FuseWelcome';
 import Albums from './Albums';
 import AlbumDetails from './AlbumDetails';
+import Footer from './Footer';
 import FuseTitle from './FuseTitle';
 // import {TweenMax} from 'gsap';
 import TrackPlayer from './TrackPlayer';
@@ -58,9 +59,9 @@ class Fuse extends Component {
       }      
     })
 
-    if (this.props.history.location.pathname === '/albums') {
-      this.changeSVGBackground();
-    }
+    // if (this.props.history.location.pathname === '/albums') {
+    //   this.changeSVGBackground();
+    // }
     
     // let yPos = window.innerHeight / 2 - this.fuse.offsetHeight;
 
@@ -102,46 +103,27 @@ class Fuse extends Component {
   render() {
     return (
       <div>
+      <Switch>
 
-      <svg width="100%" height="100%" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" id="svg-bg" preserveAspectRatio="none">
-      <g fill="none" fillRule="evenodd"><path fill="#FD0" d="M-394.386 772.014L-1676 1141.284v157.322l1281.614-508.109v-.001L389.748 931.52l2309.527 367.086v-157.322l-1028.268-63.779L389.748 886.166-394.386 772z"/><path fill="#FFCB05" d="M-251.693 147.8L446.524 8.335 854.489-61-253.137 65.11z"/></g>
-      </svg>
-      {/* 
-      <div className="fuse-title">
-          <NavLink to="/albums" activeClassName="activate" >
-            <span className="fuse-title-container"
-              ref={span => this.fuseTitleContainer = span} 
-            >
-              <span className="fuse-title-fuse fuse-title-block"
-                ref={span => this.fuse = span} 
-              >
-                <img 
-                  src="/images/title-fuse.svg" 
-                  alt="f.u.s.e."
-                />
-              </span>
-              <span className="fuse-title-dimensions fuse-title-block"
-                ref={span => this.dimensions = span} 
-              ><img src="/images/title-dimensions.svg" alt="dimensions"/></span>
-            </span>
-          </NavLink>
-      </div>
+          <Route exact path="/" render={(props) => {
+            return (
+            <div>
+              <img src="images/top.svg" alt="" className="yellow-bar hide-mobile"/>
+              <img src="images/top-mobile.svg" alt="" className="yellow-bar hide-desktop"/>
+            </div>
+            )
+          }} 
+          />
+      
+      </Switch>
 
-        
-    */}
-
-
-
-{/* 
-    <Route exact path="/" component={FuseTitle} />
-    <Route path="/albums" component={FuseTitle} />
-  */}
     <Switch>
 
           <Route exact path="/" 
           
           render={(props) => {
             return (
+            
             <FuseWelcome {...props} 
             selectAlbumFunc={this.selectAlbum}
             market={this.state.market}
@@ -181,6 +163,24 @@ class Fuse extends Component {
         
 
         </Switch>
+
+        <Switch>
+
+          <Route exact path="/" render={(props) => {
+            return (
+            <div>
+            <img src="images/bottom.svg" alt="" className="yellow-bar hide-mobile"/>
+            <img src="images/bottom-mobile.svg" alt="" className="yellow-bar hide-desktop"/>
+            </div>
+            )
+          }} 
+          />
+      
+      </Switch>
+
+        
+
+        <Footer />
 
         <TrackPlayer
           currentFile={this.state.currentFile}

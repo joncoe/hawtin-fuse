@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        copyright (c) 2019  m-nus.com  plus8.com  footer lorem ipsum
+        &copy; 2019 PLUS8 Records | &copy; 2019 The Vinyl Factory
       </footer>
     );
   }

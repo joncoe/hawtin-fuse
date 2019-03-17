@@ -7,20 +7,27 @@
     margin: 0 auto;
     &.album-navigation {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
   
       padding: 0 10px;
       margin: 0 auto 70px;
 
       @media screen and (min-width: 768px) {
         padding: 0 20px;
+        margin: 40px auto 70px;
+        flex-wrap: nowrap;
       }
   
       li {
         padding: 10px;
         cursor: pointer;
-
+        width: 50%;
+        
         @media screen and (min-width: 768px) {
+          width: 33.333%;
           padding: 20px;
+          width: auto;
         }
         
         img {
@@ -31,16 +38,23 @@
   }
 }
 
+.album-text-box {
+  background: #fff;
+}
+
 .album-text-container {
-  background-color: #fff;
-  padding-bottom: 10rem;
-  background-image: url('images/bg-album-text.svg');
+  // background-color: #fff;
+  // padding-bottom: 10rem;
+  // background-image: url('images/bg-album-text.svg');
   background-size: 100% auto;
   background-repeat: no-repeat;
 
+  margin-top: 5%;
+
   .fuse-text {
     color: #000;
-    padding-top: 10%;
+    // padding-top: 10%;
+    background: #fff;
   }
 }
 

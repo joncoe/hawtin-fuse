@@ -8,6 +8,8 @@
   width: 160px;
   text-align: center;
 
+  transition: all 0.2s ease-out;
+
   &-container {
     display: flex;
     align-items: center;
@@ -15,6 +17,11 @@
 
   &-text {
     margin-left: 0.5rem;
+  }
+
+  &:hover {
+    background: white;
+    color: $fuse-blue-dark;
   }
 
   span {

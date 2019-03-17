@@ -1,22 +1,18 @@
 .homepage-block {
-  position: absolute;
+  // position: absolute;
   width: 100%;
   top: 0;
   z-index: 100;
   
   @media screen and (min-width: 768px) {
-    // display: flex;
-    // height: 100vh;
-    // align-items: center;
-    // justify-content: center;
-    // flex-direction: column;
+    margin-top: -100px;
   }
+}
 
-  // .fuse-header {
-  //   @media screen and (min-width: 768px) {
-  //     margin-top: -120px;
-  //   }
-  // }
+
+.yellow-bar {
+  width: 100%;
+  // max-height: 200px;
 }
 
 .listen-and-preview-container {
@@ -44,6 +40,7 @@
   max-width: 480px;
   margin: 0 auto;
   padding: 0 1rem;
+  min-height: 130px;
   ul {
     position: relative;
     li {

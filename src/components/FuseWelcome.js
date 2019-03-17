@@ -82,7 +82,6 @@ class FuseWelcome extends Component {
 
       <div className="homepage-block" ref={div => this.homepageBlock = div}>
         <div className="homepage-block-container">
-
         
           <TransitionGroup>
             <FuseTitle/>

@@ -1,8 +1,29 @@
 import React from "react";
 import Slider from "react-slick";
+import {NavLink} from "react-router-dom";
 
 
 class ReactSlickCarousel extends React.Component {
+
+  constructor(props) {
+    super(props);
+      this.state = {
+        images: [
+          'Fuse_01_02',
+          'Fuse_01_01',
+          'Fuse_02_02',
+          'Fuse_02_01',
+          'Fuse_01_rgb',
+          'Fuse_02_rgb',
+          'Fuse_03_02',
+          'Fuse_03_01',
+          'Fuse_03_rgb',
+          'Fuse_05_rgb',
+          'Fuse_c',
+        ]
+      }
+    
+  }
 
   render() {
     const settings = {
@@ -23,40 +44,18 @@ class ReactSlickCarousel extends React.Component {
     return (
       <div className="slick-container">
         <Slider {...settings}>
-          <div>
-            <img src="images/renders/Fuse_01_02.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-              <img src="images/renders/Fuse_01_01.jpg" alt="F.U.S.E. Vinyl Box Set" />   
-          </div>
-          <div>
-            <img src="images/renders/Fuse_02_02.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-            <img src="images/renders/Fuse_02_01.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-            <img src="images/renders/Fuse_01_rgb.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-            <img src="images/renders/Fuse_02_rgb.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-            <img src="images/renders/Fuse_03_02.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-            <img src="images/renders/Fuse_03_01.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-            <img src="images/renders/Fuse_03_rgb.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-            <img src="images/renders/Fuse_05_rgb.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          <div>
-            <img src="images/renders/Fuse_c.jpg" alt="F.U.S.E. Vinyl Box Set" />
-          </div>
-          
+        {
+          this.state.images.map((fileName, i) => {
+            return (
+              <div key={i}>
+                <NavLink to="/albums">
+                  <img src={`/images/renders/${fileName}.jpg`} alt="F.U.S.E. Vinyl Box Set" />
+                </NavLink>
+              </div>
+            )
+          })
+        }         
+
         </Slider>
       </div>
     );

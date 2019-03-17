@@ -35,7 +35,7 @@ h2 {
   &.fuse-subtitle {
     font-family: courier, monospace;
     line-height: 1.2em;
-    font-size: .8rem;
+    font-size: 1rem;
     margin: 1rem 0;
 
     @media screen and (min-width: 767px) {
@@ -45,13 +45,30 @@ h2 {
 }
 
 .fuse-text {
+  overflow: auto;
   max-width: 540px;
   padding: 0 16px;
-  margin: 2rem auto 0;
+  margin: 0 auto 0;
   font-size: 14px;
   text-align: justify;
 }
 
 .nowrap {
   white-space: nowrap;
+}
+
+.hide-mobile {
+  display:none;
+  @media screen and (min-width: 768px) {
+    display:block;
+    
+  }
+}
+
+.hide-desktop {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display:block;
+    
+  }
 }
