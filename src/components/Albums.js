@@ -99,22 +99,7 @@ class Albums extends Component {
           <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
         </div>
 
-        <TransitionGroup>
-
-          <Transition
-            // {...props}
-            appear={true}
-            timeout={10}
-            mountOnEnter
-            unmountOnExit
-            onEntered={this.onTextEntered}
-            // onEntering={this.onEntering}
-            onEnter={this.onTextEnter}
-            // onExit={this.onExit}
-            // onExiting={this.onExiting}
-            // onExited={this.onExited}
-            // addEndListener={this.endHandler}
-          >
+        
           <div id="album-text-clipper">
             <main 
               className="album-text-container"
@@ -132,11 +117,7 @@ class Albums extends Component {
                 </div>
               </main>
             </div>
-          </Transition>
 
-          
-        
-        </TransitionGroup>
 
       </div>
     );

@@ -2,6 +2,8 @@
   
   position: relative;
   overflow: auto;
+  min-height: calc(100vh - 130px);
+
   
   ul {
     max-width: 920px;
@@ -47,14 +49,14 @@
   // background-color: #fff;
   // padding-bottom: 10rem;
   // background-image: url('images/bg-album-text.svg');
-  background-size: 100% auto;
-  background-repeat: no-repeat;
+  // background-size: 100% auto;
+  // background-repeat: no-repeat;
 
-  margin-top: 15%;
+  // margin-top: 15%;
 
-  @media (min-width: 768px) {
-    margin-top: 5%;
-  }
+  // @media (min-width: 768px) {
+  //   margin-top: 5%;
+  // }
 
   .fuse-text {
     color: #000;
@@ -69,5 +71,5 @@
 
 #album-text-clipper {
   overflow-y: hidden;
-  margin-top: -100px;
+  // margin-top: -100px;
 }

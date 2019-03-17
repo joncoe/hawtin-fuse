@@ -20,13 +20,12 @@ import {
 } from 'react-router-dom';
 import NotFound404 from './NotFound404';
 
-import {TweenMax} from 'gsap';
+
 
 import albumData from './data/albumdata';
 
 import {
-  // CSSTransition,
-  // Transition,
+
   TransitionGroup
 } from 'react-transition-group';
 

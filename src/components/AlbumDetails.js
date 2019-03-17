@@ -16,7 +16,7 @@ class AlbumDetails extends Component {
   }
 
   componentDidMount() {
-    // console.log('hello component');
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
