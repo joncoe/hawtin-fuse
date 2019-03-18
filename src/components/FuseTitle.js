@@ -97,7 +97,7 @@ class FuseTitle extends Component {
                 </NavLink>
             </div>
 
-          <h2 className="fuse-subtitle">Vinyl Box Set and <span className="nowrap">Digital Collection</span></h2>
+          <h2 className="fuse-subtitle"><p>25th Anniversary Edition</p>Vinyl Box Set and <span className="nowrap">Digital Collection</span></h2>
         </header>
       
     );

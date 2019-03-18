@@ -83,9 +83,9 @@ class FuseWelcome extends Component {
       <div className="homepage-block" ref={div => this.homepageBlock = div}>
         <div className="homepage-block-container">
         
-          <TransitionGroup>
-            <FuseTitle/>
-          </TransitionGroup>
+    
+          <FuseTitle/>
+          
 
           <div className="listen-and-preview-container">
             <NavLink to="/albums" className="listen-preview-button">
