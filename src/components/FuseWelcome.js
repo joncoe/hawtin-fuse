@@ -73,7 +73,9 @@ class FuseWelcome extends Component {
   }
 
   componentWillUnmount() {
-    this.myTween.kill();
+    if(this.myTween != null) {
+      this.myTween.kill();
+    }
   }
 
   render() {
@@ -87,10 +89,27 @@ class FuseWelcome extends Component {
           <FuseTitle/>
           
 
-          <div className="listen-and-preview-container">
-            <NavLink to="/albums" className="listen-preview-button">
-            <i className="fas fa-headphones"></i>  Details and Previews</NavLink>
-          </div>
+          <section className="fuse-quote-rotation">
+          <ul className="list-unstyled">
+            
+            {/* render quotes */}
+            {this.state.quotes.map((quote, i) => {
+              return (
+                <li ref={li => this.quotesArr[i] = li} key={i}>
+                  <p>
+                    <q>
+                      {quote.quote}
+                    </q><br />
+                      {quote.media} {quote.date}
+                  </p>
+                </li>
+              );
+            })}
+          
+          </ul>
+        </section>
+
+          
 
           <ReactSlickCarousel/>
 
@@ -102,25 +121,12 @@ class FuseWelcome extends Component {
           </div>
 
           
-          <section className="fuse-quote-rotation">
-            <ul className="list-unstyled">
-              
-              {/* render quotes */}
-              {this.state.quotes.map((quote, i) => {
-                return (
-                  <li ref={li => this.quotesArr[i] = li} key={i}>
-                    <p>
-                      <q>
-                        {quote.quote}
-                      </q><br />
-                        {quote.media} {quote.date}
-                    </p>
-                  </li>
-                );
-              })}
-            
-            </ul>
-          </section>
+
+
+          <div className="listen-and-preview-container">
+            <NavLink to="/albums" className="listen-preview-button">
+            <i className="fas fa-headphones"></i>  Enter Dimensions</NavLink>
+          </div>
 
         
         </div>

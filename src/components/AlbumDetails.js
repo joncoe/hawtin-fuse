@@ -77,6 +77,8 @@ class AlbumDetails extends Component {
             <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
           </div>
 
+          
+          <div className="fuse-album-info" dangerouslySetInnerHTML={this.createMarkup(albumInfo)}></div>
 
 
           {previewMsg}
@@ -99,7 +101,6 @@ class AlbumDetails extends Component {
           })}
           </ul>
 
-          <div className="fuse-album-info" dangerouslySetInnerHTML={this.createMarkup(albumInfo)}></div>
 
 
 

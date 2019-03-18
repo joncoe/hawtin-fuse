@@ -9,17 +9,14 @@ class ReactSlickCarousel extends React.Component {
     super(props);
       this.state = {
         images: [
-          'Fuse_01_02',
-          'Fuse_01_01',
-          'Fuse_02_02',
-          'Fuse_02_01',
-          'Fuse_01_rgb',
           'Fuse_02_rgb',
-          'Fuse_03_02',
-          'Fuse_03_01',
-          'Fuse_03_rgb',
+          'Fuse_01_rgb',
           'Fuse_05_rgb',
           'Fuse_c',
+          'Fuse_01_02',
+          'Fuse_02_02',
+          'Fuse_03_02',
+          'Fuse_03_rgb',
         ]
       }
     
@@ -30,7 +27,7 @@ class ReactSlickCarousel extends React.Component {
       dots: true,
       fade: true,
       infinite: true,
-      speed: 2000,
+      speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       swipeToSlide: true,

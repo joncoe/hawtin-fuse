@@ -78,7 +78,7 @@ class FuseTitle extends Component {
           
 
             <div className="fuse-title">
-                <NavLink to="/albums" activeClassName="activate" >
+                <NavLink to="/" activeClassName="activate" >
                   <span className="fuse-title-container"
                     ref={span => this.fuseTitleContainer = span} 
                   >
