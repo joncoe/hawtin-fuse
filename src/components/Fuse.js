@@ -9,6 +9,8 @@ import FuseTitle from './FuseTitle';
 import TrackPlayer from './TrackPlayer';
 import ShoppingCartButton from './ShoppingCartButton';
 
+import ClassNames from 'classnames';
+
 import {
   NavLink
 } from 'react-router-dom';
@@ -44,6 +46,8 @@ class Fuse extends Component {
     this.selectedAlbum = this.state.albums[0];
 
     this.loadTrack = this.loadTrack.bind(this);
+
+    this.goBack = this.goBack.bind(this);
 
     this.trackPlayer = React.createRef();
 
@@ -84,13 +88,24 @@ class Fuse extends Component {
 
   selectAlbum(albumIndex) {
 
+    console.log('selectAlbum');
+
     this.setState({
-      currentAlbumIndex: albumIndex
+      currentAlbumIndex: albumIndex,
+      currentAlbum: this.state.albums[albumIndex].title,
+      browsingAlbum: true
     })
 
     this.selectedAlbum = this.state.albums[albumIndex];
     this.props.history.push('/album/' + this.selectedAlbum.key);
 
+  }
+
+  goBack() {
+    this.setState({
+      browsingAlbum: false
+    })
+    console.log('goBack');
   }
 
   loadTrack(i){
@@ -101,6 +116,12 @@ class Fuse extends Component {
   }
 
   render() {
+
+    let buyClass = ClassNames({
+      'fuse-button-container' : this.state.browsingAlbum === false,
+      'fuse-button-container album-page' : this.state.browsingAlbum === true
+    })
+
     return (
       <div>
 
@@ -156,6 +177,7 @@ class Fuse extends Component {
               market={this.state.market}
               selectedAlbumInfo={this.selectedAlbum}
               loadTrack={this.loadTrack}
+              goBack={this.goBack}
 
               
               />
@@ -191,7 +213,10 @@ class Fuse extends Component {
           ref={this.trackPlayer}
         />
 
- 
+        <div className={buyClass}>
+          <ShoppingCartButton urlText="Vinyl" url={this.state.market.vinylUrl} />
+          <ShoppingCartButton urlText="Digital" url={this.state.market.digitalUrl} />
+        </div>
         
       </div>
     );

@@ -30,3 +30,14 @@
     display: inline-block;
   }
 }
+
+.fuse-button-container.album-page {
+  .icon-button {
+    background-color: white;
+    color: $fuse-blue-dark;
+    &:hover {
+      background: $fuse-blue-dark;
+      color: white;
+    }
+  }
+}

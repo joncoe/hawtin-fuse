@@ -13,6 +13,7 @@ class AlbumDetails extends Component {
     this.market = this.props.market;
     this.loadTrack = this.loadTrack.bind(this);
     this.preview = this.props.selectedAlbumInfo.playList;
+    this.goBack = this.props.goBack;
   }
 
   componentDidMount() {
@@ -61,7 +62,7 @@ class AlbumDetails extends Component {
         <div className="album-details-page">
 
           <nav className="go-back">
-            <Link to="/albums"><img src="/images/back.svg" alt="Go back to albums page"/></Link>
+            <Link to="/albums" onClick={this.props.goBack}><img src="/images/back.svg" alt="Go back to albums page"/></Link>
           </nav>
 
           <h1>f.u.s.e.</h1>
@@ -77,7 +78,7 @@ class AlbumDetails extends Component {
             <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
           </div>
 
-          
+
           <div className="fuse-album-info" dangerouslySetInnerHTML={this.createMarkup(albumInfo)}></div>
 
 

@@ -1,5 +1,6 @@
 const albumdata = {
   currentAlbum: '',
+  browsingAlbum: false,
   currentTitle: '',
   currentAlbumIndex: 0,
   market: {

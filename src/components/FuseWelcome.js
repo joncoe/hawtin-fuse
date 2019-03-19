@@ -114,12 +114,12 @@ class FuseWelcome extends Component {
           <ReactSlickCarousel/>
 
         
-
+{/*
           <div className="fuse-button-container">
             <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
             <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
           </div>
-
+*/}
           
 
 
