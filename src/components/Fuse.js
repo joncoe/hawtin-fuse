@@ -107,8 +107,8 @@ class Fuse extends Component {
           <Route exact path="/" render={(props) => {
             return (
             <div>
-              <img src="images/top.svg" alt="" className="yellow-bar hide-mobile"/>
-              <img src="images/top-mobile.svg" alt="" className="yellow-bar hide-desktop"/>
+              <img src="images/top.svg" alt="" className="yellow-bar hide-mobile yellow-bar-top"/>
+              <img src="images/top-mobile.svg" alt="" className="yellow-bar hide-desktop  yellow-bar-top"/>
             </div>
             )
           }} 
