@@ -33,7 +33,7 @@ class ReactSlickCarousel extends React.Component {
       swipeToSlide: true,
       autoplay: true,
       autoplaySpeed: 3000,
-      lazyLoad: true,
+      lazyLoad: false,
       arrows: false
     };
 

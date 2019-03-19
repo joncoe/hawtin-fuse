@@ -9,6 +9,12 @@
   text-align: center;
 
   transition: all 0.2s ease-out;
+  
+  &:hover {
+    background: white;
+    color: $fuse-blue-dark;
+  }
+
 
   &-container {
     display: flex;
@@ -19,10 +25,6 @@
     margin-left: 0.5rem;
   }
 
-  &:hover {
-    background: white;
-    color: $fuse-blue-dark;
-  }
 
   span {
     display: inline-block;

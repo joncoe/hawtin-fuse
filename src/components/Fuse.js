@@ -7,6 +7,7 @@ import Footer from './Footer';
 import FuseTitle from './FuseTitle';
 // import {TweenMax} from 'gsap';
 import TrackPlayer from './TrackPlayer';
+import ShoppingCartButton from './ShoppingCartButton';
 
 import {
   NavLink
@@ -102,21 +103,24 @@ class Fuse extends Component {
   render() {
     return (
       <div>
-      <Switch>
 
-          <Route exact path="/" render={(props) => {
-            return (
-            <div>
-              <img src="images/top.svg" alt="" className="yellow-bar hide-mobile yellow-bar-top"/>
-              <img src="images/top-mobile.svg" alt="" className="yellow-bar hide-desktop  yellow-bar-top"/>
-            </div>
-            )
-          }} 
-          />
-      
-      </Switch>
 
-    <Switch>
+
+        <Switch>
+
+            <Route exact path="/" render={(props) => {
+              return (
+              <div>
+                <img src="images/top.svg" alt="" className="yellow-bar hide-mobile yellow-bar-top"/>
+                <img src="images/top-mobile.svg" alt="" className="yellow-bar hide-desktop  yellow-bar-top"/>
+              </div>
+              )
+            }} 
+            />
+        
+        </Switch>
+
+        <Switch>
 
           <Route exact path="/" 
           
@@ -176,7 +180,7 @@ class Fuse extends Component {
           }} 
           />
       
-      </Switch>
+        </Switch>
 
         
 
@@ -187,6 +191,7 @@ class Fuse extends Component {
           ref={this.trackPlayer}
         />
 
+ 
         
       </div>
     );
