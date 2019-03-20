@@ -213,7 +213,7 @@ class Fuse extends Component {
           ref={this.trackPlayer}
         />
 
-        <div className={buyClass}>
+        <div className="fuse-button-container">
           <ShoppingCartButton urlText="Vinyl" url={this.state.market.vinylUrl} />
           <ShoppingCartButton urlText="Digital" url={this.state.market.digitalUrl} />
         </div>
