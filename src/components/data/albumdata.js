@@ -5,7 +5,7 @@ const albumdata = {
   currentAlbumIndex: 0,
   market: {
     vinylUrl: 'http://www.m-nus.com/',
-    digitalUrl: 'http://www.plus8.com/',
+    digitalUrl: 'https://thevinylfactory.com/product/fuse/',
   },
   currentFile: '',
 
