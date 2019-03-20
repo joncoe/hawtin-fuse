@@ -9,14 +9,13 @@ class ReactSlickCarousel extends React.Component {
     super(props);
       this.state = {
         images: [
-          'Fuse_02_rgb',
-          'Fuse_01_rgb',
-          'Fuse_05_rgb',
+          'fuse-box-1',
+          'fuse-box-2',
           'Fuse_c',
+          'Fuse_03_rgb',
           'Fuse_01_02',
           'Fuse_02_02',
-          'Fuse_03_02',
-          'Fuse_03_rgb',
+          'Fuse_03_02'
         ]
       }
     
@@ -45,9 +44,7 @@ class ReactSlickCarousel extends React.Component {
           this.state.images.map((fileName, i) => {
             return (
               <div key={i}>
-                <NavLink to="/albums">
-                  <img src={`/images/renders/${fileName}.jpg`} alt="F.U.S.E. Vinyl Box Set" />
-                </NavLink>
+                <img src={`/images/renders/${fileName}.jpg`} alt="F.U.S.E. Vinyl Box Set" />
               </div>
             )
           })
