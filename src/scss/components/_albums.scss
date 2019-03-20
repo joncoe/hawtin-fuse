@@ -42,12 +42,12 @@
 }
 
 .album-text-box {
-  background: #fff;
+  background: $fuse-blue-dark;
 }
 
 .album-text-container {
-  // background-color: #fff;
-  // padding-bottom: 10rem;
+  // background-color: $fuse-blue-dark;
+  padding-bottom: 10rem;
   // background-image: url('images/bg-album-text.svg');
   // background-size: 100% auto;
   // background-repeat: no-repeat;
@@ -59,9 +59,10 @@
   // }
 
   .fuse-text {
-    color: #000;
+    color: #fff;
     padding-top: 5%;
-    background: #fff;
+    // background: #fff;
+    font-size: 1rem;
 
     @media (min-width: 768px) {
       padding-top: 0;
@@ -72,4 +73,9 @@
 #album-text-clipper {
   overflow-y: hidden;
   // margin-top: -100px;
+}
+
+
+ul.album-features {
+  margin-top: 3rem;
 }

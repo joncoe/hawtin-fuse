@@ -51,7 +51,7 @@ h2 {
 
 .fuse-text {
   overflow: auto;
-  max-width: 540px;
+  max-width: 680px;
   padding: 0 16px;
   margin: 0 auto 0;
   font-size: 14px;
@@ -76,4 +76,8 @@ h2 {
     display:block;
     
   }
+}
+
+.text-center {
+  text-align: center;
 }
