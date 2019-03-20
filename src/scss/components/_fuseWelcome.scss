@@ -50,20 +50,17 @@
   max-width: 480px;
   margin: 2rem auto 0;
   padding: 0 1rem;
-  min-height: 130px;
+  min-height: 40px;
   ul {
     position: relative;
     li {
       position: absolute;
       top: 0;
-      opacity: 0;
+      width: 100%;
+      // opacity: 0;
       p {
-        font-size: 0.75rem;
+        // font-size: 0.75rem;
         text-align: center;
-      }
-      q {
-        font-size: 0.875rem;
-        display: block;
       }
     }
   }

@@ -29,8 +29,6 @@ class FuseWelcome extends Component {
 
     this.market = this.props.market;
 
-    console.log('this.market ', this.market);
-
     this.state = {
       quotes: quotes
     }
@@ -53,7 +51,7 @@ class FuseWelcome extends Component {
         }})
       }})
     }
-    TweenMax.delayedCall(1, cycle);
+    // TweenMax.delayedCall(1, cycle);
 
   }
 
@@ -61,15 +59,6 @@ class FuseWelcome extends Component {
 
     this.cycleQuotes();
 
-    // if (window.innerWidth >= 768) {
-      // let yPos = window.innerHeight / 2;
-      
-  
-      // TweenMax.set(this.homepageBlock, {
-      //   y: yPos
-      // });
-
-    // }
   }
 
   componentWillUnmount() {
@@ -85,28 +74,44 @@ class FuseWelcome extends Component {
       <div className="homepage-block" ref={div => this.homepageBlock = div}>
         <div className="homepage-block-container">
         
-    
-          <FuseTitle/>
+        <header className="fuse-header"  ref={header => this.titleNode = header}>
+
+          <div className="fuse-title">
+            <NavLink to="/" activeClassName="activate" >
+              <span className="fuse-title-container">
+                <span className="fuse-title-fuse  fuse-title-block">
+                  <img 
+                    src="images/title-fuse.svg" 
+                    alt="f.u.s.e."
+                  />
+                </span>
+                <span className="fuse-title-dimensions  fuse-title-block">
+                  <img src="images/title-dimensions.svg" alt="dimensions"/>
+                </span>
+              </span>
+            </NavLink>
+          </div>
+
+          <h2 className="fuse-subtitle"><p>25th Anniversary Edition</p>Vinyl Box Set and <span className="nowrap">Digital Collection</span></h2>
+        </header>
           
 
+
           <section className="fuse-quote-rotation">
-          <ul className="list-unstyled">
+            <ul className="list-unstyled">
+              
+              {/* render quotes */}
+              {this.state.quotes.map((quote, i) => {
+                return (
+                  <li ref={li => this.quotesArr[i] = li} key={i}>
+                    <p>
+                        {quote.quote}
+                    </p>
+                  </li>
+                );
+              })}
             
-            {/* render quotes */}
-            {this.state.quotes.map((quote, i) => {
-              return (
-                <li ref={li => this.quotesArr[i] = li} key={i}>
-                  <p>
-                    <q>
-                      {quote.quote}
-                    </q><br />
-                      {quote.media} {quote.date}
-                  </p>
-                </li>
-              );
-            })}
-          
-          </ul>
+            </ul>
         </section>
 
           
