@@ -43,15 +43,16 @@ class FuseWelcome extends Component {
 
     function cycle() {
       currentQuote = self.quotesArr[index];
-      self.myTween = TweenMax.to(currentQuote, 0.75, {opacity: 1, ease: Quad.easeOut, onComplete: function _() {
-        self.myTween = TweenMax.to(currentQuote, 1, {opacity: 0, ease: Quad.easeIn, delay: 3, onComplete: function _() {
+      let readingTime = self.state.quotes[index].quote.length / 16;
+      self.myTween = TweenMax.to(currentQuote, 0.35, {opacity: 1, ease: Quad.easeOut, onComplete: function _() {
+        self.myTween = TweenMax.to(currentQuote, .65, {opacity: 0, ease: Quad.easeIn, delay: readingTime, onComplete: function _() {
           index++;
           if (index === totalQuotes) index = 0;
           cycle();
         }})
       }})
     }
-    // TweenMax.delayedCall(1, cycle);
+    TweenMax.delayedCall(1, cycle);
 
   }
 
@@ -118,14 +119,7 @@ class FuseWelcome extends Component {
 
           <ReactSlickCarousel/>
 
-        
-{/*
-          <div className="fuse-button-container">
-            <ShoppingCartButton urlText="Vinyl" url={this.market.vinylUrl} />
-            <ShoppingCartButton urlText="Digital" url={this.market.digitalUrl} />
-          </div>
-*/}
-          
+      
 
 
           <div className="listen-and-preview-container">
