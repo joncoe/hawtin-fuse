@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1464px" height="176px" viewBox="0 0 1464 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>top</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="top">
-            <polygon id="solidLightBlue" fill="#006AB4" points="12 176 1452 176 1452 0 12 0"></polygon>
-            <polygon id="fillRight" fill="#FFCA05" points="1.45022883e-15 75.6580113 1.45022883e-15 147 403.673686 53.6776008 418 40.7026402 403.673686 25"></polygon>
-            <polygon id="fillLeft" fill="#FFDC00" points="403 53.6088897 1464 161 1464 96.3452098 403 25"></polygon>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1464 176" style="enable-background:new 0 0 1464 176;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFCA05;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFDC00;}
+</style>
+<title>top</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="top">
+		<polygon id="fillRight" class="st0" points="0,75.7 0,147 403.7,53.7 418,40.7 403.7,25 		"/>
+		<polygon id="fillLeft" class="st1" points="403,53.6 1464,161 1464,96.3 403,25 		"/>
+	</g>
+</g>
 </svg>

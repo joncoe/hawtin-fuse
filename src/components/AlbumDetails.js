@@ -41,7 +41,7 @@ class AlbumDetails extends Component {
     const currentAlbum = this.props.selectedAlbumInfo;
     const albumTitle = currentAlbum.title;
     const trackList = currentAlbum.trackList;
-    const coverArt = currentAlbum.artwork;
+    const coverArt = currentAlbum.cover;
     const albumInfo = currentAlbum.albumInfo;
     const preview = currentAlbum.playList;
     let previewMsg;
@@ -65,40 +65,42 @@ class AlbumDetails extends Component {
             <Link to="/albums" onClick={this.props.goBack}><img src="/images/back.svg" alt="Go back to albums page"/></Link>
           </nav>
 
-          <h1>f.u.s.e.</h1>
+          
 
           <div className="fuse-artwork">
             <img src={`/images/${coverArt}`} alt={`Cover for ${albumTitle}`}/>
           </div>
           
-          <h2>{albumTitle}</h2>
+        
+          <img src="/images/top.svg" alt="" className="yellow-bar hide-mobile yellow-bar-top"/>
+          <img src="/images/top-mobile.svg" alt="" className="yellow-bar hide-desktop  yellow-bar-top"/>
+
+          <div className="fuse-album-info-container-blue-dark">
+            <div className="fuse-album-info" dangerouslySetInnerHTML={this.createMarkup(albumInfo)}></div>
 
 
-          <div className="fuse-album-info" dangerouslySetInnerHTML={this.createMarkup(albumInfo)}></div>
+            {previewMsg}
+
+            <ul className="fuse-tracklist list-unstyled">
+            {trackList.map((track, i) => {
+              return (
+                <li 
+                    ref={li => this.tracksArr[i] = li} 
+                    key={i} 
+                    onClick={() => {
+                      this.loadTrack(i);
+                    }}
+                    className={this.preview ? 'preview' : ''}
+                  
+                >
+                  <span className="fuse-tracklist-meta">{track.recordSide}.</span> {track.title} <span className="fuse-tracklist-meta">{track.totalTime}</span>
+                </li>
+              );
+            })}
+            </ul>
 
 
-          {previewMsg}
-
-          <ul className="fuse-tracklist list-unstyled">
-          {trackList.map((track, i) => {
-            return (
-              <li 
-                  ref={li => this.tracksArr[i] = li} 
-                  key={i} 
-                  onClick={() => {
-                    this.loadTrack(i);
-                  }}
-                  className={this.preview ? 'preview' : ''}
-                
-              >
-                <span className="fuse-tracklist-meta">{track.recordSide}.</span> {track.title} <span className="fuse-tracklist-meta">{track.totalTime}</span>
-              </li>
-            );
-          })}
-          </ul>
-
-
-
+          </div>          
 
           
         </div>
