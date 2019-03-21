@@ -4,6 +4,8 @@ import ShoppingCartButton from './ShoppingCartButton';
 import FuseTitle from './FuseTitle';
 import Footer from './Footer';
 
+import {NavLink} from 'react-router-dom';
+
 import {TweenMax} from 'gsap';
 import {Expo, Quad} from 'gsap/src/uncompressed/easing/EasePack';
 
@@ -77,7 +79,25 @@ class Albums extends Component {
     return (
       <div className="albums-container">
       
-        <FuseTitle/>
+        <header className="fuse-header"  ref={header => this.titleNode = header}>
+
+          <div className="fuse-title">
+            <NavLink to="/" activeClassName="activate" >
+              <span className="fuse-title-container">
+                <span className="fuse-title-fuse  fuse-title-block">
+                  <img 
+                    src="images/title-fuse.svg" 
+                    alt="f.u.s.e."
+                  />
+                </span>
+                <span className="fuse-title-dimensions  fuse-title-block">
+                  <img src="images/title-dimensions.svg" alt="dimensions"/>
+                </span>
+              </span>
+            </NavLink>
+          </div>
+
+        </header>
       
 
 
