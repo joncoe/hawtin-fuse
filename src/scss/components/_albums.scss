@@ -78,5 +78,10 @@
 
 ul.album-features {
   margin-top: 3rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+
+  li {
+    margin-bottom: .8rem;
+  }
 }

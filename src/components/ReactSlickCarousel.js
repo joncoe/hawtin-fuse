@@ -33,7 +33,10 @@ class ReactSlickCarousel extends React.Component {
       autoplay: true,
       autoplaySpeed: 3000,
       lazyLoad: false,
-      arrows: false
+      arrows: false,
+      pauseOnFocus: true,
+      pauseOnHover: true,
+      pauseOnDotsHover: true
     };
 
 
