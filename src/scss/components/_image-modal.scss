@@ -1,0 +1,35 @@
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  width: 100%;
+  height: 100%;
+  background-color: $fuse-blue-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  display: none;
+  transition: opacity .3s ease-out, display 0s .3s;
+
+  &-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &.modal-open {
+    display: flex;
+    opacity: 1;
+    transition: opacity .8s ease-out, display 0s;
+  }
+  .full-size-image {
+    padding: 1rem;
+  }
+  img {
+    max-width: 100%;
+    width: auto;
+    border: none;
+    margin: 0 auto;
+  }
+}

@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 // import {Link} from 'react-router-dom';
 import ShoppingCartButton from './ShoppingCartButton';
-import FuseTitle from './FuseTitle';
-import Footer from './Footer';
 
 import {NavLink} from 'react-router-dom';
 
-import {TweenMax} from 'gsap';
-import {Expo, Quad} from 'gsap/src/uncompressed/easing/EasePack';
 
-import {
-  // CSSTransition,
-  Transition,
-  TransitionGroup
-} from 'react-transition-group';
-// import {TransitionMotion} from 'react-motion'
 
 class Albums extends Component {
 
@@ -25,8 +15,6 @@ class Albums extends Component {
     this.fuseTitle = null;
     this.textContainer = null;
 
-    this.onTextEnter = this.onTextEnter.bind(this);
-    this.onTextEntered = this.onTextEntered.bind(this);
 
 
   }
@@ -40,38 +28,6 @@ class Albums extends Component {
   }
 
 
-
-  onTextEnter() {
-    console.log('on text enter');
-    
-    TweenMax.set(this.textContainer, {
-      // autoAlpha: 0,
-      y: '100%'
-    });
-
-    TweenMax.set(this.textContainer, {
-      // autoAlpha: 0,
-      y: '100%'
-    });
-  }
-
-  onTextEntered() {
-    console.log('on text entered');
-    TweenMax.to(this.textContainer, 3, {
-      // autoAlpha: 0,
-      y: '0%',
-      ease: Expo.easeOut
-    });
-  }
-
-
-
-  // onEnter={() => { console.log(key + ' enter') }}
-  // onEntering={() => { console.log(key + ' entering') }}
-  // onEntered={() => { console.log(key + ' entered') }}
-  // onExit={() => { console.log(key + ' exit') }}
-  // onExiting={() => { console.log(key + ' exiting') }}
-  // onExited={() => { console.log(key + ' exited') }}
 
 
   render() {

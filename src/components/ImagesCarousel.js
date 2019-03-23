@@ -1,9 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
-import {NavLink} from "react-router-dom";
+import ImageModal from './ImageModal';
+import SlickImage from './SlickImage';
 
 
-class ReactSlickCarousel extends React.Component {
+class ImagesCarousel extends React.Component {
 
   constructor(props) {
     super(props);
@@ -16,9 +17,29 @@ class ReactSlickCarousel extends React.Component {
           'Fuse_01_02',
           'Fuse_02_02',
           'Fuse_03_02'
-        ]
+        ],
+        currentIndex: 0,
+        modalOpen: false
       }
+
+      this.closeModal = this.closeModal.bind(this);
+      this.openModal = this.openModal.bind(this);
     
+  }
+
+  openModal(i) {
+    console.log(i);
+    this.setState({
+      currentIndex: i,
+      modalOpen: true
+    })
+  }
+
+  closeModal() {
+    console.log('closeModal');
+    this.setState({
+      modalOpen: false
+    })
   }
 
   render() {
@@ -39,24 +60,31 @@ class ReactSlickCarousel extends React.Component {
       pauseOnDotsHover: true
     };
 
-
     return (
       <div className="slick-container">
         <Slider {...settings}>
         {
           this.state.images.map((fileName, i) => {
             return (
-              <div key={i}>
-                <img src={`/images/renders/${fileName}.jpg`} alt="F.U.S.E. Vinyl Box Set" />
-              </div>
+              <SlickImage key={i} 
+                openModal={this.openModal} 
+                fileName={`/images/renders/${fileName}.jpg`} 
+                index={i}/>
             )
           })
         }         
 
         </Slider>
+
+        <ImageModal 
+          modalOpen={this.state.modalOpen} 
+          fileName={this.state.images[this.state.currentIndex]} 
+          closeModal={this.closeModal}
+        />
+
       </div>
     );
   }
 }
 
-export default ReactSlickCarousel;
+export default ImagesCarousel;

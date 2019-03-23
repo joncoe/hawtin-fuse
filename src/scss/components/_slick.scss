@@ -20,4 +20,17 @@
   .slick-dots li.slick-active button:before {
     background-color: $fuse-yellow;
   }
+
+  .slick-slide {
+    pointer-events: none;
+    cursor: pointer;
+
+    &.slick-active {
+      pointer-events: all;
+    }
+  }
+
+  .slick-dots {
+    bottom: -40px;;
+  }
 }

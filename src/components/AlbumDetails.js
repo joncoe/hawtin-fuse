@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import ShoppingCartButton from './ShoppingCartButton';
-import Footer from './Footer';
-
 
 class AlbumDetails extends Component {
 

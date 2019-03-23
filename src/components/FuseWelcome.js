@@ -3,18 +3,10 @@ import {TweenMax} from 'gsap';
 import {Quad} from 'gsap/src/uncompressed/easing/EasePack';
 
 import quotes from './data/quotes';
-import FuseTitle from './FuseTitle';
-import ShoppingCartButton from './ShoppingCartButton';
 
-import ReactSlickCarousel from './ReactSlickCarousel';
+import ImagesCarousel from './ImagesCarousel';
 
 import {NavLink} from 'react-router-dom';
-
-import {
-  // CSSTransition,
-  // Transition,
-  TransitionGroup
-} from 'react-transition-group';
 
 
 class FuseWelcome extends Component {
@@ -117,7 +109,7 @@ class FuseWelcome extends Component {
 
           
 
-          <ReactSlickCarousel/>
+          <ImagesCarousel/>
 
       
 

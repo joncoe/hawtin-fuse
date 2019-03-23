@@ -4,16 +4,10 @@ import FuseWelcome from './FuseWelcome';
 import Albums from './Albums';
 import AlbumDetails from './AlbumDetails';
 import Footer from './Footer';
-import FuseTitle from './FuseTitle';
+
 // import {TweenMax} from 'gsap';
 import TrackPlayer from './TrackPlayer';
 import ShoppingCartButton from './ShoppingCartButton';
-
-import ClassNames from 'classnames';
-
-import {
-  NavLink
-} from 'react-router-dom';
 
 
 import {
@@ -63,22 +57,6 @@ class Fuse extends Component {
       }      
     })
 
-    // if (this.props.history.location.pathname === '/albums') {
-    //   this.changeSVGBackground();
-    // }
-    
-    // let yPos = window.innerHeight / 2 - this.fuse.offsetHeight;
-
-    // console.log(this.fuse.getBoundingClientRect());
-    
-
-    // TweenMax.set(this.fuseTitleContainer, {
-    //   y: yPos
-    // });
-
-    // TweenMax.set(this.dimensions, {
-    //   y: yPos
-    // });
   }
 
   changeSVGBackground() {
@@ -87,8 +65,6 @@ class Fuse extends Component {
   }
 
   selectAlbum(albumIndex) {
-
-    console.log('selectAlbum');
 
     this.setState({
       currentAlbumIndex: albumIndex,
@@ -117,16 +93,8 @@ class Fuse extends Component {
 
   render() {
 
-    let buyClass = ClassNames({
-      'fuse-button-container' : this.state.browsingAlbum === false,
-      'fuse-button-container album-page' : this.state.browsingAlbum === true
-    })
-
     return (
       <div>
-
-
-
         <Switch>
 
             <Route exact path="/" render={(props) => {
