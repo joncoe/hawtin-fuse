@@ -43,7 +43,7 @@ class FuseWelcome extends Component {
 
     function cycle() {
       currentQuote = self.quotesArr[index];
-      let readingTime = self.state.quotes[index].quote.length / 16;
+      let readingTime = self.state.quotes[index].quote.length / 22;
       self.myTween = TweenMax.to(currentQuote, 0.35, {opacity: 1, ease: Quad.easeOut, onComplete: function _() {
         self.myTween = TweenMax.to(currentQuote, .65, {opacity: 0, ease: Quad.easeIn, delay: readingTime, onComplete: function _() {
           index++;
@@ -123,7 +123,7 @@ class FuseWelcome extends Component {
 
 
           <div className="listen-and-preview-container">
-            <NavLink to="/albums" className="listen-preview-button">
+            <NavLink to="/albums" className="listen-preview-button enter-button">
             <i className="fas fa-headphones"></i>  Enter Dimensions</NavLink>
           </div>
 
