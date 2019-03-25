@@ -13,7 +13,8 @@ import ShoppingCartButton from './ShoppingCartButton';
 import {
   Route,
   Switch,
-  withRouter
+  withRouter,
+  Link
 } from 'react-router-dom';
 import NotFound404 from './NotFound404';
 
@@ -81,7 +82,6 @@ class Fuse extends Component {
     this.setState({
       browsingAlbum: false
     })
-    console.log('goBack');
   }
 
   loadTrack(i){
@@ -128,10 +128,14 @@ class Fuse extends Component {
             className="albums-component"
             render={(props) => {
               return (
-              <TransitionGroup><Albums {...props} 
+              <div>
+              <nav className="go-back">
+                <Link to="/" onClick={this.props.goBack}><img src="/images/back.svg" alt="Go back to albums page"/></Link>
+            </nav>
+              <Albums {...props} 
               selectAlbumFunc={this.selectAlbum}
               market={this.state.market}
-              albums={this.state.albums}/></TransitionGroup>)
+              albums={this.state.albums}/></div>)
             }}
           />
 
@@ -140,18 +144,41 @@ class Fuse extends Component {
             exact
             path="/album/:albumName"
             render={(props) => {
-              return <AlbumDetails 
-              {...props}
-              market={this.state.market}
-              selectedAlbumInfo={this.selectedAlbum}
-              loadTrack={this.loadTrack}
-              goBack={this.goBack}
+              return (
+                <div>
+                  <nav className="go-back">
+                    <ul className="list-unstyled">
+                      <li><Link to="/albums" onClick={this.props.goBack}><img src="/images/back.svg" alt="Go back to albums page"/></Link></li>
 
-              
-              />
+                      {
+                        this.state.albums.map((album, i) => {
+                          return (
+
+                            <li key={i}
+                            className={this.state.currentAlbumIndex === i ? 'active' : ''}
+                            ><a href="/album/dimension-intrusion" onClick={(e) => {
+                              e.preventDefault();
+                              this.selectAlbum(i);
+                            }}><div className="album-tiny-link"></div></a></li>
+                           
+                          )
+                        })
+                      }
+                    </ul>
+                  </nav>
+                
+                <AlbumDetails 
+                  {...props}
+                  market={this.state.market}
+                  selectedAlbumInfo={this.selectedAlbum}
+                  loadTrack={this.loadTrack}
+                  goBack={this.goBack}
+                />
+              </div>)
             }}
 
           />
+
 
           <Route render={() => <NotFound404/>} />
         

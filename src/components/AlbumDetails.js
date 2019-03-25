@@ -58,12 +58,6 @@ class AlbumDetails extends Component {
       <div>
         <div className="album-details-page">
 
-          <nav className="go-back">
-            <Link to="/albums" onClick={this.props.goBack}><img src="/images/back.svg" alt="Go back to albums page"/></Link>
-          </nav>
-
-          
-
           <div className="fuse-artwork">
             <img src={`/images/${coverArt}`} alt={`Cover for ${albumTitle}`}/>
           </div>
