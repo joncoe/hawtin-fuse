@@ -46,22 +46,11 @@
 }
 
 .album-text-container {
-  // background-color: $fuse-blue-dark;
   padding-bottom: 10rem;
-  // background-image: url('images/bg-album-text.svg');
-  // background-size: 100% auto;
-  // background-repeat: no-repeat;
-
-  // margin-top: 15%;
-
-  // @media (min-width: 768px) {
-  //   margin-top: 5%;
-  // }
-
+  
   .fuse-text {
     color: #fff;
     padding-top: 5%;
-    // background: #fff;
     font-size: 1rem;
 
     @media (min-width: 768px) {
@@ -72,7 +61,6 @@
 
 #album-text-clipper {
   overflow-y: hidden;
-  // margin-top: -100px;
 }
 
 

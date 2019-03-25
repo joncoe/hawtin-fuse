@@ -49,21 +49,7 @@ class Fuse extends Component {
   
   }
 
-  componentDidMount() {
 
-
-    this.props.history.listen((location, action) => {
-      if(location.pathname === '/albums') {
-        this.changeSVGBackground();
-      }      
-    })
-
-  }
-
-  changeSVGBackground() {
-    console.log('change svg background');
-
-  }
 
   selectAlbum(albumIndex) {
 

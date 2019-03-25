@@ -28,7 +28,6 @@ class ImagesCarousel extends React.Component {
   }
 
   openModal(i) {
-    console.log(i);
     this.setState({
       currentIndex: i,
       modalOpen: true
@@ -36,7 +35,6 @@ class ImagesCarousel extends React.Component {
   }
 
   closeModal() {
-    console.log('closeModal');
     this.setState({
       modalOpen: false
     })
