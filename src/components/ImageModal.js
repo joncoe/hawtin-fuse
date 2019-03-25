@@ -37,6 +37,10 @@ class ImageModal extends Component {
         
         <div className="image-modal-screen" onClick={this.props.closeModal}></div>
 
+        <div className="button-close">
+          <img src="/images/close.svg" alt="close"  onClick={this.props.closeModal}/>
+        </div>
+
         <div className="full-size-image">
           <img src={`/images/renders/${this.state.fileName}-full.jpg`} alt="F.U.S.E. Vinyl Box Set" />
         </div>

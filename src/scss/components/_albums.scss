@@ -85,3 +85,20 @@ ul.album-features {
     margin-bottom: .8rem;
   }
 }
+
+
+.exhibit {
+  margin-top: 4rem;
+  &:first-child {
+    margin-top: 5rem;
+  }
+  h2 {
+    font-size: 5rem;
+    transform: scaleX(2);
+    letter-spacing: -.02em;
+    margin-bottom: 2rem;
+  }
+  a {
+    text-decoration: underline;
+  }
+}

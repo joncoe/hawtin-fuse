@@ -108,6 +108,25 @@ class Albums extends Component {
                     <li>Release date: April 15, 2019</li>
                   </ul>
 
+                  <div>
+                  <div className="exhibit">
+                    <div className="text-center">
+                      <h2>dimensions<br/>exhibition</h2>
+                      <p>5-7th April</p>
+                      <p>Art by<br/><strong>Matthew Hawtin</strong><br/>Music by <br/><strong>Richie Hawtin</strong></p>
+                      <p><a href="http://180thestrand.com/" target="_blank">180 The Strand, London (UK)</a></p>
+                      <p>Entry: free to attend</p>
+                    </div>
+                  </div>
+
+
+                  <div className="exhibit">
+                    <p><em>Dimensions</em> is a multimedia exhibition celebrating the 25th anniversary of Richie Hawtin’s iconic F.U.S.E. albums from 1993. </p>
+                    <p>The exhibition presents the original artworks by visual artist Matthew Hawtin and premiers the unreleased F.U.S.E. album Computer Space in an exclusive listening session prior to its official release. For the first time the visual and sonic works that mutually inspired the artists are merged to a cohesive experience for a public audience. 
+                    </p>
+                  </div>
+                  </div>
+
                   </section>
 
                 </div>
