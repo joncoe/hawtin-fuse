@@ -1,0 +1,46 @@
+.register-modal {
+  .form-container {
+    max-width: 480px;
+    padding: 1rem;
+  }
+
+  .form-row {
+    display: flex;
+    margin-top: 2rem;
+  }
+  input {
+    padding: .5rem .8rem;
+    border: none;
+    font-weight: bold;
+    color: black;
+
+    &[type=text] {
+      flex-grow: 1;
+    }
+
+    &[type=submit] {
+      background-color: $fuse-yellow;
+    }
+  }
+
+  p {
+    line-height: 1.8em;
+  }
+
+  .hide-container {
+    display: none;
+  }
+
+  .form-submitting {
+    animation: fade 0.6s infinite ease-in-out;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
+@keyframes fade {
+  0%   { opacity:1; }
+  50%  { opacity:.2; }
+  100% { opacity:1; }
+}

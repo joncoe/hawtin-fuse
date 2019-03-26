@@ -8,6 +8,9 @@ const albumdata = {
     digitalUrl: '#',
   },
   currentFile: '',
+  formOpen: false,
+  emailAddress: '',
+  formStatus: 'static',
 
   albums: [
     {

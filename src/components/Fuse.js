@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {TweenMax} from 'gsap';
+
+
+
+
 
 import FuseWelcome from './FuseWelcome';
 import Albums from './Albums';
 import AlbumDetails from './AlbumDetails';
 import Footer from './Footer';
 
-// import {TweenMax} from 'gsap';
+
 import TrackPlayer from './TrackPlayer';
 import ShoppingCartButton from './ShoppingCartButton';
 
@@ -22,10 +32,7 @@ import NotFound404 from './NotFound404';
 
 import albumData from './data/albumdata';
 
-import {
 
-  TransitionGroup
-} from 'react-transition-group';
 
 class Fuse extends Component {
 
@@ -44,7 +51,15 @@ class Fuse extends Component {
 
     this.goBack = this.goBack.bind(this);
 
+    this.openForm = this.openForm.bind(this);
+
+    this.closeForm = this.closeForm.bind(this);
+
     this.trackPlayer = React.createRef();
+    
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
   
   }
@@ -76,6 +91,50 @@ class Fuse extends Component {
     const directory = this.state.albums[this.state.currentAlbumIndex].key;
     this.trackPlayer.current.loadTrack(this.selectedAlbum, trackTitle, directory, i);
   }
+
+  openForm(e) {
+    e.preventDefault();
+    this.setState({
+      emailAddress: '',
+      formStatus: 'static',
+      formOpen: true
+    })
+  }
+
+  closeForm(e) {
+    e.preventDefault();
+    this.setState({
+      formStatus: 'static',
+      formOpen: false
+    })
+  }
+
+  handleChange(e) {
+    e.preventDefault();
+    
+    this.setState({
+      emailAddress: e.target.value
+    })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const email = this.state.emailAddress;
+    
+    this.setState({
+      formStatus: 'submitting'
+    });
+
+    axios.post(`http://fuse.plus8.com/cgi-bin/email_action.php`, { email })
+      .then(res => {
+        this.setState({
+          formStatus: 'received'
+        });
+        TweenMax.from(this.statusReceived, .4, {opacity:0});
+      })
+    
+  }
+
 
   render() {
 
@@ -196,8 +255,69 @@ class Fuse extends Component {
 
         <div className="fuse-button-container">
           <ShoppingCartButton urlText="Vinyl" url={this.state.market.vinylUrl} />
+          {/*
           <ShoppingCartButton urlText="Digital" url={this.state.market.digitalUrl} />
+          */}
+
+
+          <a href="/digital/" className="icon-button" onClick={this.openForm}>
+            <span className="icon-button-container">
+              <FontAwesomeIcon icon="cart-arrow-down" size="lg"/>
+              <span className="icon-button-text">Digital</span>
+            </span>
+          </a>
+
+
         </div>
+
+
+        <div className={
+          this.state.formOpen ? 'image-modal modal-open register-modal' : 'image-modal register-modal'
+        }>
+          
+          <div className="button-close">
+            <img src="/images/close.svg" alt="close"  onClick={this.closeForm}/>
+          </div>
+        
+          <div className={
+            this.state.formStatus === 'static' ? 'form-container' : 'form-container hide-container'
+          }>        
+            <p>Submit your email address for a notification for when the <strong>DIGITAL</strong> pre-order is available.</p>
+            
+            <div className="form-row">
+              <input type="text" id="email" name="email" placeholder="Email Address" onChange={this.handleChange}/>
+              <input type="submit" name="submit" value="Notify me" onClick={this.handleSubmit}/>
+            </div>
+          </div>
+
+
+
+          <div className={
+              this.state.formStatus === 'submitting' ? 'form-container' : 'form-container hide-container'
+            }
+          >
+            <div className="form-submitting  text-center">
+              Your email is in space
+            </div>
+          
+          </div>
+
+
+
+          <div className={
+              this.state.formStatus === 'received' ? 'form-container received' : 'form-container hide-container'
+            }
+            ref={div => this.statusReceived = div}
+          >
+            <div className="text-center">
+              <p>Your email address is now in the computer brain. You will be notified when the <strong>DIGITAL</strong> collection is available to order.</p>
+
+              <p><a href="/" onClick={this.closeForm}>Return to our dimension.</a></p>
+            </div>
+          </div>
+
+        </div>
+      
         
       </div>
     );

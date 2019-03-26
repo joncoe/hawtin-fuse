@@ -6,7 +6,6 @@ import {
 import {TweenMax} from 'gsap';
 import {Expo} from 'gsap/src/uncompressed/easing/EasePack';
 
-import Transition from "react-transition-group/Transition";
 
 
 class FuseTitle extends Component {
