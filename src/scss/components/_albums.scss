@@ -78,7 +78,7 @@ ul.album-features {
 .exhibit {
   margin-top: 4rem;
   &:first-child {
-    margin-top: 5rem;
+    margin-top: 0;
   }
   h2 {
     font-size: 5rem;
@@ -88,5 +88,9 @@ ul.album-features {
   }
   a {
     text-decoration: underline;
+  }
+
+  img {
+    width: 100%;
   }
 }

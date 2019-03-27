@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import ImageModal from './ImageModal';
 import SlickImage from './SlickImage';
 
+// import OnImagesLoaded from 'react-on-images-loaded'; 
+
 
 class ImagesCarousel extends React.Component {
 
@@ -10,6 +12,7 @@ class ImagesCarousel extends React.Component {
     super(props);
       this.state = {
         images: [
+          'box-01',
           'fuse-box-1',
           'fuse-box-2',
           'Fuse_c',

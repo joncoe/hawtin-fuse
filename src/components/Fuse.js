@@ -132,7 +132,6 @@ class Fuse extends Component {
         this.setState({
           formStatus: 'received'
         });
-        console.log(res);
         TweenMax.from(this.statusReceived, .4, {opacity:0});
       })
     

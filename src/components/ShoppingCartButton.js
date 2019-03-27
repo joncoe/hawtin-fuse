@@ -10,7 +10,7 @@ class ShoppingCartButton extends Component {
 
   render() {
     return (
-      <a href={this.props.url} className="icon-button" target="_blank">
+      <a href={this.props.url} className="icon-button" target="_blank" rel="noopener noreferrer">
         <span className="icon-button-container">
           <FontAwesomeIcon icon="cart-arrow-down" size="lg"/>
           <span className="icon-button-text">{this.props.urlText}</span>
