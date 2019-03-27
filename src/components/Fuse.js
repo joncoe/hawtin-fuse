@@ -77,6 +77,8 @@ class Fuse extends Component {
     this.selectedAlbum = this.state.albums[albumIndex];
     this.props.history.push('/album/' + this.selectedAlbum.key);
 
+    window.scrollTo(0, 0);
+
   }
 
   goBack() {

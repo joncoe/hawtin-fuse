@@ -4,7 +4,13 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        &copy; 2019 PLUS8 Records | &copy; 2019 The Vinyl Factory
+        <nav className="social-links">
+          <ul className="list-unstyled">
+            <li><a href="https://www.facebook.com/Plus8Records/" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/plus8records" target="_blank">Twitter</a></li>
+          </ul>
+        </nav>
+        &copy; 2019 <a href="http://www.plus8.com">PLUS8 Records</a> | &copy; 2019 <a href="https://thevinylfactory.com/product/fuse/" target="_blank">The Vinyl Factory</a>
       </footer>
     );
   }
