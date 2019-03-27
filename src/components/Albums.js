@@ -96,7 +96,7 @@ class Albums extends Component {
                     <li>Bespoke hand-crafted box with magnetic closure, soft touch lamination and spot UV finish </li>
                     <li>3 x artist prints of the original album covers, printed on 250gsm somerset velvet paper</li>
                     <li>20pp book with soft touch lamination and spot UV cover </li>
-                    <li>8 x 180g white vinyl records</li>
+                    <li>7 x 180g white vinyl records</li>
                     <li>1 x digital download card</li>
                     <li>Limited edition of 500</li>
                     <li>Available to pre-order now</li>

@@ -130,6 +130,7 @@ class Fuse extends Component {
         this.setState({
           formStatus: 'received'
         });
+        console.log(res);
         TweenMax.from(this.statusReceived, .4, {opacity:0});
       })
     
@@ -288,6 +289,8 @@ class Fuse extends Component {
               <input type="text" id="email" name="email" placeholder="Email Address" onChange={this.handleChange}/>
               <input type="submit" name="submit" value="Notify me" onClick={this.handleSubmit}/>
             </div>
+
+            <p className="text-center return-text"><a href="/" onClick={this.closeForm}>Return to dimensions</a></p>
           </div>
 
 
@@ -312,7 +315,7 @@ class Fuse extends Component {
             <div className="text-center">
               <p>Your email address is now in the computer brain. You will be notified when the <strong>DIGITAL</strong> collection is available to order.</p>
 
-              <p><a href="/" onClick={this.closeForm}>Return to our dimension.</a></p>
+              <p className="text-center"><a href="/" onClick={this.closeForm}>Return to our dimension</a></p>
             </div>
           </div>
 
