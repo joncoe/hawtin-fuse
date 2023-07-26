@@ -2,7 +2,7 @@
 
 This is the codebase for a website I made for Richie Hawtin's FUSE album marketing website.
 
-[http://fuse.plus8.com](Visit here)
+[http://fuse.plus8.com]([Visit here](http://fuse.plus8.com))
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
