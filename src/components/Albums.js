@@ -116,7 +116,9 @@ class Albums extends Component {
                       <div className="exhibit">
                         <div className="text-center">
                           <h2>dimensions<br/>exhibition</h2>
-                          <p>5-7th April<br/>12-7pm</p>
+                          <p><span className="text-strike">5-7th April</span><br/>
+                          <strong>EXTENDED</strong> to <strong>April 14th</strong><br/>
+                          12-7pm</p>
                           <p>Art by<br/><strong>Matthew Hawtin</strong><br/>Music by <br/><strong>Richie Hawtin</strong></p>
                           <p><a href="http://180thestrand.com/" target="_blank" rel="noopener noreferrer">180 The Strand, London (UK)</a></p>
                           <p>Entry: free to attend</p>

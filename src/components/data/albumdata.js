@@ -5,7 +5,7 @@ const albumdata = {
   currentAlbumIndex: 0,
   market: {
     vinylUrl: 'https://thevinylfactory.com/product/fuse/',
-    digitalUrl: '#',
+    digitalUrl: 'https://ffm.to/dimensions',
   },
   currentFile: '',
   formOpen: false,

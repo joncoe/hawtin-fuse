@@ -257,22 +257,23 @@ class Fuse extends Component {
 
         <div className="fuse-button-container">
           <ShoppingCartButton urlText="Vinyl" url={this.state.market.vinylUrl} />
-          {/*
+          
           <ShoppingCartButton urlText="Digital" url={this.state.market.digitalUrl} />
-          */}
+          
 
 
-          <a href="/digital/" className="icon-button" onClick={this.openForm}>
+          {/*<a href="/digital/" className="icon-button" onClick={this.openForm}>
             <span className="icon-button-container">
               <FontAwesomeIcon icon="cart-arrow-down" size="lg"/>
               <span className="icon-button-text">Digital</span>
             </span>
           </a>
+          */}
 
 
         </div>
 
-
+{/*
         <div className={
           this.state.formOpen ? 'image-modal modal-open register-modal' : 'image-modal register-modal'
         }>
@@ -322,7 +323,7 @@ class Fuse extends Component {
 
         </div>
       
-        
+          */}
       </div>
     );
   }
